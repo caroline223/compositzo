@@ -158,17 +158,17 @@ div p {
   background-size: 100%;
   background-repeat: repeat-x repeat-y;
   overflow: scroll;
-  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-lisa-1006293.jpg');
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-lisa-1006293.jpg');
 }
 
 #contactPageImage{
   background-size: 50%;
   background-repeat: repeat-x repeat-y;
   overflow: hidden;
-  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
 }
 
 #loginPageImage{
-  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-poan-studio-5797900.jpg');
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-poan-studio-5797900.jpg');
   background-size: 50%;
 }
