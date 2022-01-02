@@ -36,3 +36,139 @@
     transform: rotate(360deg);
   }
 }
+
+div h1{
+  text-align: center;
+  text-decoration: underline;
+  font-style: normal;
+  font-family: fantasy;
+}
+
+div h2{
+ margin-left: 20px;
+ font-family: fantasy;
+}
+
+p {
+  text-align: justify;
+  font-size: 16px;
+}
+
+div p {
+  margin: 30px
+}
+
+.logo{
+  color: red;
+  font-size: 30px;
+  text-align: center;
+  font-family: cursive;
+}
+
+.title{
+  color: red;
+  font-size: 90px;
+  font-family: cursive;
+  position: relative;
+  text-align: center;
+  bottom: 200px;
+  left: 20px;
+}
+
+#homeTitle{
+  color: red;
+  font-size: 70px;
+  font-family: cursive;
+  position: relative;
+  text-align: center;
+  bottom: 870px; 
+}
+
+#homeCaption{
+  color: black;
+  font-size: 24px;
+  font-family: fantasy;
+  position: relative;
+  text-align: center;
+  bottom: 815px; 
+}
+
+#pregnancyTitle{
+  color: red;
+  font-size: 37px;
+  font-family: cursive;
+  position: relative;
+  text-align: center;
+  bottom: 200px;
+  left: 20px; 
+}
+
+
+#travelTitle{
+  color: red;
+  font-size: 37px;
+  font-family: cursive;
+  position: relative;
+  text-align: center;
+  bottom: 200px;
+  left: 20px;
+}
+
+.titleImage{
+  opacity: 0.4;
+}
+
+.selectionBar{
+  text-align: center;
+}
+
+.createJournalButton{
+  opacity: 0.7;
+}
+
+#homePageButton{
+  opacity: 0.8; 
+  
+}
+
+#homeMenu{
+  position: relative;
+  bottom: 915px;
+  opacity: 0.65;
+  font-family: fantasy;
+}
+
+
+#journalMenu{
+  background-color: red;
+  font-size: 18pt;
+  font-family: fantasy;
+}
+
+
+.editor{
+  margin-right: 0em;
+}
+
+.ck-editor_editable_inline {
+  height: 500px;
+}
+
+#journalImage{
+  background-size: 100%;
+  background-repeat: repeat-x repeat-y;
+  overflow: scroll;
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-lisa-1006293.jpg');
+}
+
+#contactPageImage{
+  background-size: 50%;
+  background-repeat: repeat-x repeat-y;
+  overflow: hidden;
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
+}
+
+#loginPageImage{
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-poan-studio-5797900.jpg');
+  background-size: 50%;
+}
