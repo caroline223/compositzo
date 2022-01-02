@@ -3,7 +3,7 @@ import NavBar from '../NavBar'
 import Footer from '../Footer'
 import { Image } from 'semantic-ui-react'
 import SignUpGrid from '../SignUpGrid'
-import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
+import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
 
 

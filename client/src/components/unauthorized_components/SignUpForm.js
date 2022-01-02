@@ -1,5 +1,5 @@
 import React from 'react'
-import SignUpPhoto from '/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg'
+import SignUpPhoto from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg'
 import { Button, Form, Grid, Header, Segment } from 'semantic-ui-react'
 
 

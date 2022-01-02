@@ -3,7 +3,7 @@ import NavBar from '../NavBar'
 import SignUpGrid from '../SignUpGrid'
 import Footer from '../Footer'
 import { Button, Image } from 'semantic-ui-react'
-import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
+import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
 
 function JournalPrompts(){

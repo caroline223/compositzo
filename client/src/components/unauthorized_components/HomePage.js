@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../Footer'
 import SocialMediaAdv from './SocialMediaAdv'
 import { Button, Grid, Header, Icon, Image, Segment, Menu } from 'semantic-ui-react'
-import HomeImage from '/Users/carolineforrester/Flatiron/code/phase_5/project-template-react-rails-api/client/src/images/pexels-lisa-1006293.jpg'
+import HomeImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-lisa-1006293.jpg'
   
 
 function HomePage() {
