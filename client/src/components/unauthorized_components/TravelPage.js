@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../NavBar'
 import Footer from '../Footer'
 import SignUpGrid from '../SignUpGrid'
-import { Button, Image } from 'semantic-ui-react'
+
 import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
 
@@ -12,44 +12,22 @@ function TravelPage(){
         <div>
             <NavBar />
 
-            <div>
-                <Image src={HeaderImage} className="titleImage" alt="Header Image" height="400" width="100%" />
+             <div>
+                <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
                 <div id="travelTitle" >
                     Travel Journal: Tips and Tricks on a successful journal log
-                    <br /><br /><br />
-                    <Button color='red' className='createJournalButton' href="/signup">Create Your First Journal</Button>
+                    <br />
+                    <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
                 </div>
-            </div>
+             </div>
 
-            <div style={{textAlign: 'center'}}>
-                <div class="ui horizontal list">
-                    <div class="item">
-                        <div class="content">
-                            <div class="header"><a href="/">Home</a></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header">/</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header"><a href="/introduction">What is a Journal?</a></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header">/</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header">Travel Journal</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+             <nav aria-label="breadcrumb"  >
+                <ol class="breadcrumb" >
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                     <li class="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Travel Journal</li>
+                </ol>
+        </nav> 
 
             <p>
                 Traveling allows you to explore new places, meet new people, and uncover new opportunities. The more and farther you travel,

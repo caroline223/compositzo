@@ -2,7 +2,6 @@ import React from 'react'
 import NavBar from '../NavBar'
 import SignUpGrid from '../SignUpGrid'
 import Footer from '../Footer'
-import { Button, Image } from 'semantic-ui-react'
 import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
 
@@ -11,37 +10,24 @@ function IntroductionPage(){
 return(
     <div>
          <NavBar />
+         
         <div>
-            <Image src={HeaderImage} className="titleImage" alt="Header Image" height="400" width="100%" />
+            <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
             <div className="title" >
                 What is a Journal? 
-                <br /><br /><br />
-                <Button color='red' className='createJournalButton' href="/signup">Create Your First Journal</Button>
+                <br />
+                <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
             </div>
        </div>
 
-        <div style={{textAlign: 'center'}}>
-            <div class="ui horizontal list">
-                <div class="item">
-                    <div class="content">
-                        <div class="header"><a href="/">Home</a></div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">/</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">What is a Journal?</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-
-        <br /><br />
+       
+       <nav aria-label="breadcrumb"  >
+                <ol class="breadcrumb" >
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">What is a Journal?</li>
+                </ol>
+        </nav> 
+      
             <p>
                 According to Webster's Dictionary, a journal is a record of experiences, ideas, or reflections 
                 regularly for private use. It can be used to detail everything from your feelings toward a particular situation in your 
@@ -87,7 +73,7 @@ return(
             <br /><br /><br />
         
         <Footer />
-            
+             
     </div>
 )
 

@@ -1,7 +1,9 @@
 import React from 'react';
 import Footer from '../Footer';
 import NavBar from '../NavBar';
-import { Image, Table, Icon } from 'semantic-ui-react'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {faFacebookSquare, faInstagram, faTwitter } from '@fortawesome/free-brands-svg-icons'
+
 import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
 
@@ -13,54 +15,43 @@ function ContactPage(){
             <NavBar />
 
             <div>
-            <Image src={HeaderImage} className="titleImage" alt="Header Image" height="400" width="100%" />
-                <div className="title" >
-                    Contact Us   
+                <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
+                <div className="title">
+                    Contact Us
+                    <br />
+                    <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
                 </div>
             </div>
 
 
-         <div style={{textAlign: 'center'}}>
-            <div class="ui horizontal list">
-                <div class="item">
-                    <div class="content">
-                        <div class="header"><a href="/">Home</a></div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">/</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">Contact Us</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
+         <nav aria-label="breadcrumb"  >
+                <ol class="breadcrumb" >
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                </ol>
+            </nav> 
         <br />
 
         <h1>Follow Us On Our Social Media Platforms!</h1>
-        <div style={{padding: '80px'}}>
-            <Table color='red'>
-                <Table.Row style={{textAlign: 'center'}}>
-                    <Table.Cell ><Icon name='instagram' color='purple'/>Instagram</Table.Cell>
-                    <Table.Cell >@Compositzo</Table.Cell>
-                </Table.Row>
-                <Table.Row style={{textAlign: 'center'}}>
-                    <Table.Cell><Icon name='facebook' color='blue' />Facebook</Table.Cell>
-                    <Table.Cell>@Compositzo</Table.Cell>
-                </Table.Row>
-                <Table.Row style={{textAlign: 'center'}}>
-                    <Table.Cell><Icon name='twitter' color='blue' />Twitter</Table.Cell>
-                    <Table.Cell>@Compositzo</Table.Cell>
-                </Table.Row>
-            </Table>
-        </div>
+        <table class="table table-striped">
+            <tbody style={{textAlign: 'center'}}>
+                <tr>
+                    <td><FontAwesomeIcon icon={faInstagram} color='purple' size=''/>&nbsp;Instagram</td>
+                    <td>@Compositzo</td>
+                </tr>
+                <tr>
+                    <td><FontAwesomeIcon icon={faFacebookSquare} color='blue'/>&nbsp; Facebook</td>
+                    <td>@Compositzo</td> 
+                </tr>
+                <tr>
+                    <td><FontAwesomeIcon icon={faTwitter} color='blue' />&nbsp;Twitter</td>
+                    <td>@Compositzo</td>
+                </tr>
+            </tbody>
+        </table>
+        
        
-            <Footer />    
+            <Footer />     
         </div>
     )
 

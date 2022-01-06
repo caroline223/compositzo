@@ -2,7 +2,7 @@ import React from 'react'
 import NavBar from '../NavBar'
 import SignUpGrid from '../SignUpGrid'
 import Footer from '../Footer'
-import { Button, Image } from 'semantic-ui-react'
+
 import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
 
@@ -11,44 +11,23 @@ function JournalPrompts(){
     return(
         <div>
             <NavBar />
+            
             <div>
-                <Image src={HeaderImage} className="titleImage" alt="Header Image" height="400" width="100%" />
+                <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
                 <div className="title" >
                     Journal Prompts
-                    <br /><br /><br />
-                    <Button color='red' className='createJournalButton' href="/signup">Create Your First Journal</Button>
+                    <br />
+                    <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
                 </div>
             </div>
 
-            <div style={{textAlign: 'center'}}>
-                <div class="ui horizontal list">
-                    <div class="item">
-                        <div class="content">
-                            <div class="header"><a href="/">Home</a></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header">/</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header"><a href="/introduction">Journals</a></div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header">/</div>
-                        </div>
-                    </div>
-                    <div class="item">
-                        <div class="content">
-                            <div class="header">Journal Prompts</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <nav aria-label="breadcrumb"  >
+                <ol class="breadcrumb" >
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">Journal Prompts</li>
+                </ol>
+        </nav> 
 
             <h1>What is a Journal Prompt?</h1>
             <p>
@@ -128,7 +107,9 @@ function JournalPrompts(){
             
             <br /><br /><br />
 
-               <Footer /> 
+            
+
+               <Footer />  
      </div>
     )
 

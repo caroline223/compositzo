@@ -1,7 +1,7 @@
 import React from 'react'
 import NavBar from '../NavBar'
 import Footer from '../Footer'
-import { Image } from 'semantic-ui-react'
+
 import SignUpGrid from '../SignUpGrid'
 import HeaderImage from '/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-karolina-grabowska-4476376.jpg'
 
@@ -14,31 +14,20 @@ function AboutPage() {
             <NavBar />
 
             <div>
-            <Image src={HeaderImage} className="titleImage" alt="Header Image" height="400" width="100%" />
-                <div className="title" >
-                    About Us   
-                </div>
+            <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
+            <div className="title" >
+                About Us
+                <br />
+                <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
             </div>
+       </div>
 
-            <div style={{textAlign: 'center'}}>
-            <div class="ui horizontal list">
-                <div class="item">
-                    <div class="content">
-                        <div class="header"><a href="/">Home</a></div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">/</div>
-                    </div>
-                </div>
-                <div class="item">
-                    <div class="content">
-                        <div class="header">About</div>
-                    </div>
-                </div>
-            </div>
-        </div>
+         <nav aria-label="breadcrumb"  >
+                <ol class="breadcrumb" >
+                    <li class="breadcrumb-item"><a href="/">Home</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                </ol>
+        </nav> 
 
         <br />
             <h1>Who Are We?</h1>
@@ -56,7 +45,7 @@ function AboutPage() {
            <SignUpGrid />
            <br /> <br /> <br /> <br />
            
-            <Footer />
+            <Footer /> 
 
         </div>
     )
