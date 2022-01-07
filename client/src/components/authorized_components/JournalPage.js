@@ -1,17 +1,27 @@
 import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
-// import parse from 'html-react-parser'
+function JournalPage({ setUser }){
 
+    const history = useHistory()
 
-import { Menu, Dropdown, Grid, Segment, Form, Button, } from 'semantic-ui-react'
+    const clickLogout = () => {
+        fetch(`/logout`, {
+        method: 'DELETE',
+        credentials: 'include'
+        })
+        .then((response) => {
+            if (response.ok) {
+            setUser(null) 
+            history.push('/logout')
+            }
+        })
+    }
 
-
-function JournalPage(){
 
     const [text, setText] = useState('')
-   
 
     const options = [
         { key: 1, text: 'Happy', value: 1 },
@@ -31,81 +41,106 @@ function JournalPage(){
         { key: 15, text: 'Embarrassed', value: 15 },
       ]
 
-
-   
     return(
+       <div>
         <div id="journalImage" >
-             <Menu id="journalMenu" >
-                <Menu.Item position="right" style={{color: 'white', fontWeight: 'bold'}}>Compositzo</Menu.Item>
-                <Menu.Menu position='right'>
-                    <Dropdown item text="Name" style={{color: 'white', fontWeight: 'bold'}}>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Account</Dropdown.Item>
-                            <Dropdown.Item href="/entries-page">Entries</Dropdown.Item>
-                            <Dropdown.Item>Log Out</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Menu.Menu>
-              </Menu> 
+        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/"><h2 style={{color: 'red'}}>Compositzo</h2></a>
+                <div style={{textAlign: 'right'}}>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="/entries-page" style={{color: 'red'}}>Entries </a>
+                        </li>
+                        <li className="nav-item">
+                            <button type="button" class="btn btn-link" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
+                        </li>
+                        </ul>
+                   </div>
+                   </div>
+                </div>
+            </nav>
 
-               <Grid textAlign='center' style={{ height: '100vh', fontFamily: 'Optima' }} verticalAlign='middle'>
-                <Grid.Column style={{ maxWidth: 900, height: 780, opacity: '0.9'  }}>
-                <Form size='large' >
-                    <Segment stacked>
-                    <label>Title</label>
-                        <Form.Input placeholder="Entry Title" 
-                            type="text"
-                            // value={email}
-                            // onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                         <label>Date</label>
-                        <Form.Input  
-                            type="date"
-                            // value={email}
-                            // onChange={(e) => setEmail(e.target.value)}
-                            required
-                        />
-                        <label>How Are You Feeling?</label>
-                        <br />
-                        <Dropdown clearable options={options} selection />
-                        <br /><br />
-                        <label>Content</label>
-                       <div className='editor'>   
-                        <CKEditor 
-                            editor={ClassicEditor}
-                            data={text}
-                            onChange={(event, editor) => {
-                                const data = editor.getData()
-                                setText(data)
-                            }}
-                        />
-                       </div>
-                       
-                       
-                       <br />
-                        {/* <Form.TextArea style={{height: '500px'}}label='Content' 
-                            placeholder="Your entry here"
-                            type="text"
-                            // value={username}
-                            // onChange={(e) => setUsername(e.target.value)}
-                            required
-                        /> */}
-                         
-                        <Button color='grey' fluid size='medium'>
-                            <div style={{ fontFamily: 'Optima'}}>
-                                Save
-                            </div>
-                        </Button>
-                    </Segment>
-                </Form>
+            <form style={{padding: '100px'}}>
+            <div class="form-group">
+                <h3>Title</h3>
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="exampleFormControlInput1" 
+                    placeholder="name@example.com" 
+                    // value={email}
+                    // onChange={(e) => setEmail(e.target.value)}
+                    // required
+                    />     
+            </div>
+            <br />
+            <div class="form-group">
+               <h3>Date</h3>
+                <input 
+                     type="date"
+                     class="form-control" 
+                     // value={email}
+                     // onChange={(e) => setEmail(e.target.value)}
+                     // required
+                />
+            </div>
+            <br />
+            <div class="form-group">
+               <h3>How Are You Feeling?</h3>
+               
+            </div>
+            <div class="form-group">
+                <select class="form-select form-select-sm" aria-label=".form-select-sm example" options={options}>
+                    <option value="1">Happy</option>
+                    <option value="2">Sad</option>
+                    <option value="3">Angry</option>
+                    <option value="4">Excited</option>
+                    <option value="5">Overwhelmed</option>
+                    <option value="6">Depressed</option>
+                    <option value="7">Anxious</option>
+                    <option value="8">Nervous</option>
+                    <option value="9">Frustrated</option>
+                    <option value="10">Distracted</option>
+                    <option value="11">Jealous</option>
+                    <option value="12">Hopeless</option>
+                    <option value="13">Exhausted</option>
+                    <option value="14">Lonely</option>
+                    <option value="5">Embarrassed</option>
+                </select>    
+            </div>
+            <br />
+            <div class="form-group">
+                <h3>Content</h3>
+                <div className='editor'>   
+                    <CKEditor 
+                        editor={ClassicEditor}
+                        data={text}
+                        onChange={(event, editor) => {
+                            const data = editor.getData()
+                            setText(data)
+                        }}
+                    />
+                </div>
+            </div>
+            <br /><br />
+            <div style={{textAlign: 'center'}}>
+                <button type="button" className="btn btn-danger">
+                     <div style={{ fontFamily: 'Optima'}}>
+                         Save
+                    </div>
+                </button>
+                <p style={{textAlign: 'center', fontFamily: 'Optima'}}><a className="btn btn btn-danger" href="/entries-page" >Back</a></p>
+            </div>
             
-                </Grid.Column>
-            </Grid> 
+        </form>
+
+     </div>
+
         </div>
     )
-
-
-
 }
-export default JournalPage
+export default JournalPage;
+
+

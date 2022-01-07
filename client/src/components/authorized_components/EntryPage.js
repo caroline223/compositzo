@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, Dropdown, Button, Icon, Table, Card } from 'semantic-ui-react';
+import { useHistory } from 'react-router-dom'
 import EntryInfo from './entries_page/EntryInfo'
 
 
-
-
-function EntryPage(){
+function EntryPage({ setUser }){
 
     // const [entries, setEntries] = useState([])
     // const [filteredEntries, setFilteredEntries] = useState([])
@@ -30,46 +28,67 @@ function EntryPage(){
     // const entryDisplay = () => entries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
     // const filteredEntryDisplay = () => filteredEntries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
 
+    const history = useHistory()
+
+    const clickLogout = () => {
+        fetch(`/logout`, {
+        method: 'DELETE',
+        credentials: 'include'
+        })
+        .then((response) => {
+            if (response.ok) {
+            setUser(null) 
+            history.push('/logout')
+            }
+        })
+    }
+
     return(
-        <div>
-           <Menu id='journalMenu' >
-                <Menu.Item position="right" style={{color: 'white', fontWeight: 'bold'}}>Compositzo</Menu.Item>
-                <Menu.Menu position='right'>
-                    <Dropdown item text="Name"  style={{color: 'white', fontWeight: 'bold'}}>
-                        <Dropdown.Menu>
-                            <Dropdown.Item>Account</Dropdown.Item>
-                            <Dropdown.Item>Log Out</Dropdown.Item>
-                        </Dropdown.Menu>
-                    </Dropdown>
-                </Menu.Menu>
-              </Menu>  
-              <div style={{backgroundColor: 'gainsboro', textAlign: 'center'}}>
-                            <div className="ui search searchBar" >
-                                <div className="ui icon input" >
-                                    <input  placeholder="Search Title" className="prompt"  />
-                                    <i className="search icon" />
-                                </div>
-                            </div>   
-              </div>
-              <br /><br />
-              <div style={{textAlign: 'center'}}>
-                    <Button color='blue' href="/journal-page">New Entry&nbsp;&nbsp;&nbsp;&nbsp;
-                                <Icon name='plus circle' />
-                    </Button>
-              </div>
-              <br />
-              <Table color='red'>
-                  <Table.Header>
-                      <Table.Row>
-                          <Table.HeaderCell textAlign='center'>Entries</Table.HeaderCell>
-                      </Table.Row>
-                  </Table.Header>
-              </Table>
-{/*              
-             <Card.Group itemsPerRow={3}>
-                 {filteredEntries.length > 0 ? filteredEntryDisplay(): entryDisplay()}
-             </Card.Group> */}
-        </div>
-    )
+        <div id="entriesImage">
+           <nav className="navbar navbar-expand-lg navbar-light bg-light">
+                <div className="container-fluid">
+                    <a className="navbar-brand" href="/"><h2 style={{color: 'red'}}>Compositzo</h2></a>
+                        <div style={{textAlign: 'right'}}>
+                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul className="navbar-nav mr-auto">
+                                <li className="nav-item active">
+                                    <a className="nav-link" href="/journal-page" style={{color: 'red'}}>New Entry </a>
+                                </li>
+                                <li className="nav-item">
+                                <button type="button" class="btn btn-link" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
+                                </li>
+                                </ul>
+                            </div>
+                         </div>
+                 </div>
+            </nav>
+
+            <div style={{padding: '150px'}}>
+                <div className="input-group">
+                    <input 
+                        class="form-control border-end-0 border rounded-pill" 
+                        type="text" 
+                        // onChange={searchEntries}  
+                        />
+                    <span class="input-group-append">
+                        <i class="fa fa-search"></i>
+                    </span>
+                </div>
+                <br />
+                <div style={{textAlign: 'center'}}>
+                    <p style={{textAlign: 'center', fontFamily: 'fantasy'}}><a className="btn btn-lg btn-secondary" href="/journal-page" >New Entry</a></p>
+                </div>
+                    <br />
+                <h1 style={{color: 'red'}}>Entries</h1>
+                
+            </div>       
+    {/*    
+    //          
+             
+    //          <Card.Group itemsPerRow={3}>
+    //              {filteredEntries.length > 0 ? filteredEntryDisplay(): entryDisplay()}
+    //          </Card.Group> */}
+         </div>
+   )
 }
 export default EntryPage
