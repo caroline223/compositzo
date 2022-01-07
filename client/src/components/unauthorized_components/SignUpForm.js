@@ -1,8 +1,47 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useHistory } from 'react-router-dom'
 
+function SignUpForm({setUser}) {
 
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    const [password, setPassword] = useState("")
+    const [passwordConfirmation, setPasswordConfirmation] = useState("")
+    const [errors, setErrors] = useState([])
 
-function SignUpForm() {
+    const history = useHistory()
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        fetch('/signup', {
+            method: 'POST',
+            headers: {
+                "Content-type" : "application/json"
+            },
+            body: JSON.stringify({
+                username, 
+                password,
+                email,
+                password_confirmation: passwordConfirmation
+            })
+        })
+        .then(response => {
+            if (response.ok) {
+              response.json()
+              .then(user => {
+                setUser(user)
+                history.push('')
+              })
+            } 
+            else {
+                response.json()
+                .then(errors => {
+                    setErrors(errors.errors)
+                })
+            }
+          })
+
+    }
 
     return(
         <div id="signUpPageImage" >
@@ -17,56 +56,73 @@ function SignUpForm() {
                 <br />
   
         
-            <form  >
-        <div class="form-floating"  >
-          <input 
-            type="email" 
-            class="form-control" 
-            id="floatingInput" 
-            placeholder="name@example.com" 
-          />
-          <label for="floatingInput" >Email address</label>
-        </div>
+         <form onSubmit={handleSubmit} >
+                <div class="form-floating"  >
+                <input 
+                    type="email" 
+                    class="form-control" 
+                    id="floatingInput" 
+                    placeholder="name@example.com" 
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    required
+                />
+                <label for="floatingInput" >Email Address</label>
+                </div>
+                    <br />
+                <div class="form-floating">
+                <input 
+                    type="text" 
+                    class="form-control" 
+                    id="floatingInput" 
+                    placeholder="Username" 
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                />
+                <label for="floatingInput">Create Username</label>
+                </div>
+                    <br />
+                <div class="form-floating">
+                    <input 
+                        type="password" 
+                        class="form-control" 
+                        id="password" 
+                        placeholder="Password" 
+                        value={password}
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                    <label for="floatingPassword">Create Password</label>
+                </div>
+                <br />
+                <div class="form-floating">
+                    <input 
+                    type="password" 
+                    class="form-control" 
+                    id="password_confirmation" 
+                    placeholder="Password" 
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    required
+                    />
+                    <label for="floatingInput">Confirm Password</label>
+                </div>
+                <p>{errors}</p>
+                    <br /><br />
             <br />
-         <div class="form-floating">
-          <input 
-            type="text" 
-            class="form-control" 
-            id="floatingInput" 
-            placeholder="Username" 
-          />
-          <label for="floatingInput">Create Username</label>
-        </div>
-            <br />
-        <div class="form-floating">
-            <input 
-                type="password" 
-                class="form-control" 
-                id="floatingPassword" 
-                placeholder="Password" 
-            />
-            <label for="floatingPassword">Create Password</label>
-         </div>
-         <br />
-         <div class="form-floating">
-            <input 
-            type="password" 
-            class="form-control" 
-            id="floatingInput" 
-            placeholder="Password" 
-            />
-            <label for="floatingInput">Confirm Password</label>
-        </div>
+            <button class="w-100 btn btn-lg btn-secondary" type="submit">Submit</button>
             <br /><br />
-      <br />
-    <button class="w-100 btn btn-lg btn-secondary" type="submit">Submit</button>
-    <br /><br />
-      <button class="w-100 btn btn-lg btn-secondary"><a href="/" style={{color: 'white'}}>Home</a></button>
-    </form>
+            <button class="w-100 btn btn-lg btn-secondary"><a href="/" style={{color: 'white'}}>Home</a></button>
+        </form>
+            
+            
             </div>
     
-                </div>
             </div>
+    
+    
+    
+     </div>
         
     )
 

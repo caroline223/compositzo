@@ -10,27 +10,25 @@ function HomePage() {
   
     return(
         <div>
-        <header>
-            <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
-            <div className="container-fluid">
-            <a className="navbar-brand" href="/"><h2>Compositzo</h2></a>
-      <div style={{textAlign: 'right'}}>
-      <div className="collapse navbar-collapse" id="navbarCollapse">
-        <ul className="navbar-nav me-auto mb-2 mb-md-0">
-          <li className="nav-item">
-            <a className="nav-link active" aria-current="page" href="/login">Login</a>
-          </li>
-          <li className="nav-item">
-            <a className="nav-link" href="/signup">Signup</a>
-          </li>  
-        </ul>
-      </div>
-      </div> 
-    </div>
-  </nav>
-</header>
-
-
+          <header>
+              <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+                <div className="container-fluid">
+                   <a className="navbar-brand" href="/"><h2>Compositzo</h2></a>
+                     <div style={{textAlign: 'right'}}>
+                         <div className="collapse navbar-collapse" id="navbarCollapse">
+                            <ul className="navbar-nav me-auto mb-2 mb-md-0">
+                              <li className="nav-item">
+                                <a className="nav-link active" aria-current="page" href="/login">Login</a>
+                              </li>
+                              <li className="nav-item">
+                                <a className="nav-link" href="/signup">Signup</a>
+                              </li>  
+                            </ul>
+                          </div>
+                     </div> 
+                  </div>
+              </nav>
+        </header>
 
   <div id="myCarousel" className="carousel slide" data-bs-ride="carousel">
     <div className="carousel-indicators">
@@ -40,10 +38,10 @@ function HomePage() {
     </div>
     <div className="carousel-inner">
       <div className="carousel-item active">
-       <img  src={HomeImage} width="100%" height="100%" alt="Home Image" />
+       <img  src={HomeImage} width="100%" height="100%" alt="Home" />
 
         <div className="container">
-          <div className="carousel-caption text-start" style={{bottom: '200px'}}>
+          <div className="carousel-caption text-start" style={{bottom: '250px'}}>
             <h1 style={{color: 'red', fontSize: '70px'}}>Compositzo</h1>
             <p style={{color: 'red', textAlign: 'center', fontSize: '30px', fontFamily: 'cursive'}}>The World's Most Famous Journaling App!</p>
             <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Join Today</a></p>
@@ -51,7 +49,7 @@ function HomePage() {
         </div>
       </div>
       <div className="carousel-item">
-      <img  src={HomeImage2} width="100%" height="100%" alt="Home Image"/>
+      <img  src={HomeImage2} width="100%" height="100%" alt="Home"/>
 
         <div className="container">
           <div className="carousel-caption">
@@ -102,7 +100,7 @@ function HomePage() {
         </p>
       </div>
       <div className="col-md-5 order-md-1">
-        <img src ="https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8am91cm5hbHxlbnwwfHwwfHw%3D&w=1000&q=80"  width="300" height="300" alt="Journal Image"/>
+        <img src ="https://images.unsplash.com/photo-1483546363825-7ebf25fb7513?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8am91cm5hbHxlbnwwfHwwfHw%3D&w=1000&q=80"  width="300" height="300" alt="Journal"/>
       </div>
     </div>
 
@@ -117,14 +115,13 @@ function HomePage() {
               Therefore, we provide authentication to ensure that the right person views their respective content at any given time.
         </p>
       </div>
-      <div className="col-md-5">
-          <img src ="https://st.depositphotos.com/1571889/1823/i/600/depositphotos_18235681-stock-photo-login-screen.jpg"  width="300" height="300" alt="Login Image"/>
+      <div className="col-md-5 " style={{textAlign: 'right'}}>
+          <img src ="https://st.depositphotos.com/1571889/1823/i/600/depositphotos_18235681-stock-photo-login-screen.jpg"  width="300" height="300" alt="Login"/>
       </div>
     </div>
 
    
-  </div>
-
+  </div>   
       <Footer />
   </div>
     )

@@ -3,40 +3,40 @@ import { useHistory } from 'react-router-dom'
 
 
 
-function LoginForm() {
+function LoginForm({ setUser }) {
 
-    // const history = useHistory()
-    // const [username, setUsername] = useState("");
-    // const [password, setPassword] = useState("");
-    // const [errors, setErrors] = useState([]);
+    const history = useHistory()
+    const [username, setUsername] = useState("");
+    const [password, setPassword] = useState("");
+    const [errors, setErrors] = useState([]);
 
     
 
-    // const handleSubmit = (event)  => {
-    //   event.preventDefault()
-    //   fetch('/login', {
-    //     method: 'POST',
-    //     headers: {
-    //       'Content-Type': 'application/json'
-    //     },
-    //     body: JSON.stringify({username, password})
-    //   })
-    //     .then(response => {
-    //       if (response.ok) {
-    //         response.json()
-    //         .then(user => {
-    //           setUser(user)
-    //         //   history.push('/entries-page')
-    //         })
-    //       } 
-    //       else {
-    //         response.json()
-    //         .then(errors => {
-    //           setErrors(errors.error)
-    //         })
-    //       }
-    //     })
-    //   }
+    const handleSubmit = (event)  => {
+      event.preventDefault()
+      fetch('/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({username, password})
+      })
+        .then(response => {
+          if (response.ok) {
+            response.json()
+            .then(user => {
+              setUser(user)
+              history.push('/entries-page')
+            })
+          } 
+          else {
+            response.json()
+            .then(errors => {
+              setErrors(errors.error)
+            })
+          }
+        })
+      }
   
 
     return(
@@ -45,18 +45,35 @@ function LoginForm() {
           <br /><br /><br />
           <h1 class="h3 mb-3 fw-normal">Sign In</h1>
       
-      <form style={{padding: '120px 230px'}}>
+      <form style={{padding: '120px 260px'}} onSubmit={handleSubmit}>
         <div class="form-floating">
-          <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" />
-          <label for="floatingInput">Email address</label>
+          <input 
+            type="text" 
+            class="form-control" 
+            id="floatingInput" 
+            placeholder="Username" 
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            />
+          <label for="floatingInput">Username</label>
         </div>
-    <br /><br />
+      <br />
         <div class="form-floating">
-         <input type="password" class="form-control" id="floatingPassword" placeholder="Password" />
+         <input 
+                type="password" 
+                class="form-control" 
+                id="floatingPassword" 
+                placeholder="Password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                />
           <label for="floatingPassword">Password</label>
          </div>
       <br />
     <button class="w-100 btn btn-lg btn-secondary" type="submit">Sign In</button>
+      <p>{errors}</p>
     <br /><br />
       <button class="w-100 btn btn-lg btn-secondary"><a href="/" style={{color: 'white'}}>Home</a></button>
     </form>

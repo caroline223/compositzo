@@ -33,7 +33,7 @@ function ContactPage(){
         <br />
 
         <h1>Follow Us On Our Social Media Platforms!</h1>
-        <table class="table table-striped">
+        <table class="table table-striped" style={{padding: '20px'}}>
             <tbody style={{textAlign: 'center'}}>
                 <tr>
                     <td><FontAwesomeIcon icon={faInstagram} color='purple' size=''/>&nbsp;Instagram</td>
