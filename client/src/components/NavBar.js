@@ -1,17 +1,26 @@
 import React from 'react'
-import { Menu} from 'semantic-ui-react'
 
 function NavBar(){
 
     return(
         <div>
-            <Menu 
-                fixed="top"
-                style={{ height: '70px'}}>
-                <Menu.Item position='left' href="/"> <div className='logo'>Compositzo</div> </Menu.Item>
-                <Menu.Item position='right' href="/login"> Login </Menu.Item>
-                <Menu.Item href="/signup"> Sign Up </Menu.Item>
-            </Menu>
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
+            <div className="container-fluid">
+                <a className="navbar-brand" href="/"><h2 style={{color: 'red'}}>Compositzo</h2></a>
+                <div style={{textAlign: 'right'}}>
+                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul className="navbar-nav mr-auto">
+                        <li className="nav-item active">
+                            <a className="nav-link" href="/login" style={{color: 'red'}}>Login </a>
+                        </li>
+                        <li className="nav-item">
+                            <a className="nav-link" href="/signup" style={{color: 'red'}}>Signup</a>
+                        </li>
+                        </ul>
+                   </div>
+                   </div>
+                </div>
+            </nav>
         </div>
     )
 

@@ -30,7 +30,7 @@ function SignUpForm({setUser}) {
               response.json()
               .then(user => {
                 setUser(user)
-                history.push('')
+                history.push('/success')
               })
             } 
             else {

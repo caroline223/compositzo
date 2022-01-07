@@ -11,7 +11,7 @@ function HomePage() {
     return(
         <div>
           <header>
-              <nav className="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+              <nav className="navbar navbar-expand-md navbar-dark fixed-top" style={{backgroundColor: 'black'}}>
                 <div className="container-fluid">
                    <a className="navbar-brand" href="/"><h2>Compositzo</h2></a>
                      <div style={{textAlign: 'right'}}>
@@ -44,7 +44,7 @@ function HomePage() {
           <div className="carousel-caption text-start" style={{bottom: '250px'}}>
             <h1 style={{color: 'red', fontSize: '70px'}}>Compositzo</h1>
             <p style={{color: 'red', textAlign: 'center', fontSize: '30px', fontFamily: 'cursive'}}>The World's Most Famous Journaling App!</p>
-            <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Join Today</a></p>
+            <p style={{textAlign: 'center', fontFamily: 'cursive'}}><a className="btn btn-lg btn-danger" href="/signup" >Join Today</a></p>
           </div>
         </div>
       </div>
@@ -121,7 +121,8 @@ function HomePage() {
     </div>
 
    
-  </div>   
+  </div>  
+      <br /><br />
       <Footer />
   </div>
     )

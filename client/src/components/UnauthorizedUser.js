@@ -10,6 +10,8 @@ import PregnancyPage from './unauthorized_components/PregnancyPage'
 import TravelPage from './unauthorized_components/TravelPage'
 import AboutPage from './unauthorized_components/AboutPage'
 import ContactPage from './unauthorized_components/ContactPage'
+import LogoutPage from './unauthorized_components/LogoutPage'
+
 import { Switch, Route } from 'react-router-dom'
 
 function UnauthorizedUser({ setUser }) {
@@ -22,23 +24,25 @@ function UnauthorizedUser({ setUser }) {
             <Route exact path="/login">
                 <LoginForm setUser={setUser} /> 
             </Route>
+            
             <Route exact path="/signup">
                 <SignUpForm setUser={setUser} /> 
             </Route>
+            
             <Route exact path="/introduction">
                 <IntroductionPage setUser={setUser} /> 
-            </Route>
-            <Route exact path="/three-year-journal">
-                <ThreeYear setUser={setUser} /> 
             </Route>
             <Route exact path="/journal-prompts">
                 <JournalPrompts setUser={setUser} /> 
             </Route>
+            <Route exact path="/journal-examples">
+                <JournalExamples setUser={setUser}/> 
+            </Route>
+            <Route exact path="/three-year-journal">
+                <ThreeYear setUser={setUser} /> 
+            </Route>
             <Route exact path="/pregnancy-journal">
                 <PregnancyPage setUser={setUser} /> 
-            </Route>
-            <Route exact path="/journal-examples">
-                <JournalExamples setUser={setUser} /> 
             </Route>
             <Route exact path="/travel-journal">
                 <TravelPage setUser={setUser} /> 
@@ -49,6 +53,10 @@ function UnauthorizedUser({ setUser }) {
             <Route exact path="/contact">
                 <ContactPage setUser={setUser} /> 
             </Route>
+            <Route exact path="/logout">
+                <LogoutPage setUser={setUser} /> 
+            </Route>
+            
         </Switch>
     )
 }

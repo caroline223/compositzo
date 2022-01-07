@@ -27,7 +27,7 @@ function LogoutPage() {
         </header>
             
 
-        <div id="logoutPageImage">
+        <div className="accountImage">
             <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /> <br /><br /><br />
             <h2  style={{textAlign: 'center', color: 'gray', fontWeight: 'bolder'}}>You have successfully logged out.</h2>
             <br /><br /><br />

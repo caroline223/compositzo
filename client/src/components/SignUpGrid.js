@@ -1,24 +1,23 @@
 import React from 'react'
-import { Grid, Button, Icon } from 'semantic-ui-react'
+
 
 function SignUpGrid(){
 
     return(
         <div>
-            <Grid  textAlign='center'  padded >
-                <Grid.Row  height='30%' >
-                    <Grid.Column color='red' width={5}>
-                        <p style={{textAlign: 'center'}}>Time is of the essence! Don't hesitiate! - Start your free
+                <div class="container" style={{opacity: '0.7'}}>
+                    <div class="row" style={{backgroundColor: 'red'}}>
+                        <div class="col-sm">
+                        <p style={{textAlign: 'center', color: 'white', fontFamily: 'cursive'}}>Time is of the essence! Don't hesitiate! - Start your free
                             online journal today!
                         </p>
-                    </Grid.Column>
-                    <Grid.Column color='red' width={5}>
-                        <Button href='/signup' style={{backgroundColor: 'white'}}>Create your Journal
-                            <Icon name='right arrow' />
-                        </Button>
-                    </Grid.Column>
-                </Grid.Row>
-            </Grid>
+                        </div>
+                        <div class="col-sm" style={{textAlign: 'center', fontFamily: 'cursive'}}>
+                        <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-light" href="/signup" >Start Now!</a></p>
+                        </div>
+                        
+                    </div>
+                </div>
         </div>
     )
 
