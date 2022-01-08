@@ -6,7 +6,7 @@ function Footer(){
         <div>
             <div  style={{backgroundColor: 'black'}}>
             <footer className="row row-cols-5 py-5 my-6 border-top">
-                 <div className="col">
+                 <div className="col" style={{fontFamily: 'fantasy'}}>
                 <a href="/" className="d-flex align-items-center mb-3 link-dark text-decoration-none">
                     <svg className="bi me-2" width="40" height="32"></svg>
                 </a>
