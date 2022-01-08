@@ -49,13 +49,46 @@ div h2{
  font-family: fantasy;
 }
 
+div h5{
+  margin-left: 20px;
+  font-family: fantasy;
+}
+
+div h3 {
+  font-family: fantasy;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+h3{
+  color: red;
+  
+}
+
+
+
+
+
+ul{
+  margin-left: 20px;
+  font-family: fantasy; 
+  
+}
+ 
+
 p {
   text-align: justify;
   font-size: 16px;
+  font-family: optima;
 }
 
 div p {
   margin: 30px
+}
+
+ol li{
+  font-family: fantasy;
 }
 
 .logo{
@@ -69,10 +102,10 @@ div p {
   color: red;
   font-size: 90px;
   font-family: cursive;
-  position: relative;
+  position: absolute;
   text-align: center;
-  bottom: 200px;
-  left: 20px;
+  bottom: 400px;
+  left: 380px;
 }
 
 #homeTitle{
@@ -97,10 +130,10 @@ div p {
   color: red;
   font-size: 37px;
   font-family: cursive;
-  position: relative;
+  position: absolute;
   text-align: center;
-  bottom: 200px;
-  left: 20px; 
+  bottom: 420px;
+  left: 300px; 
 }
 
 
@@ -108,14 +141,16 @@ div p {
   color: red;
   font-size: 37px;
   font-family: cursive;
-  position: relative;
+  position: absolute;
   text-align: center;
-  bottom: 200px;
-  left: 20px;
+  bottom: 420px;
+  left: 300px;
 }
 
 .titleImage{
   opacity: 0.4;
+  height: 400px;
+  width: 100%
 }
 
 .selectionBar{
@@ -154,11 +189,20 @@ div p {
   height: 500px;
 }
 
-#journalImage{
+#entriesImage{
   background-size: 100%;
+  opacity: 0.8;
   background-repeat: repeat-x repeat-y;
   overflow: scroll;
-  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-lisa-1006293.jpg');
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-life-of-pix-8892.jpg');
+}
+
+#journalImage{
+  background-size: 100%;
+  opacity: 0.8;
+  background-repeat: repeat-x repeat-y;
+  overflow: scroll;
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-fwstudio-139306.jpg');
 }
 
 #contactPageImage{
@@ -171,4 +215,18 @@ div p {
 #loginPageImage{
   background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-poan-studio-5797900.jpg');
   background-size: 50%;
+  background-repeat: repeat;
 }
+
+.accountImage{
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-poan-studio-5797898.jpg');
+  background-size: 100%;
+
+}
+
+#signUpPageImage{
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
+  background-size: 50%;
+  background-repeat: repeat-x repeat-y;
+}
+ 
