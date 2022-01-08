@@ -19,15 +19,18 @@ return(
                 <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
             </div>
           
-                <nav aria-label="breadcrumb" >
-                    <ol className="breadcrumb"  >
+              
+         </div>
+         <br />
+        
+                 <nav aria-label="breadcrumb" >
+                    <ol className="breadcrumb justify-content-center"  >
                         <li className="breadcrumb-item"><a href="/">Home</a></li>
                         <li className="breadcrumb-item active" aria-current="page">What is a Journal?</li>
                     </ol>
                 </nav> 
-          
-            
-       </div>
+       
+        
        
             <p>
                 According to Webster's Dictionary, a journal is a record of experiences, ideas, or reflections 

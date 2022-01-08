@@ -14,15 +14,15 @@ function JournalPrompts(){
             
             <div>
                 <img src={HeaderImage} className="titleImage" alt="Header"  />
-                <div className="title" >
+                <div className="title" style={{left: '420px'}} >
                     Journal Prompts
                     <br />
                     <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
                 </div>
             </div>
-
+            <br />
             <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb" >
+                <ol class="breadcrumb justify-content-center" >
                     <li class="breadcrumb-item"><a href="/">Home</a></li>
                     <li class="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Journal Prompts</li>
