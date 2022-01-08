@@ -1,8 +1,6 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
-
-
 function LoginForm({ setUser }) {
 
     const history = useHistory()
@@ -41,11 +39,17 @@ function LoginForm({ setUser }) {
 
     return(
         <div id="loginPageImage" >
-         
-          <br /><br /><br />
-          <h1 class="h3 mb-3 fw-normal">Sign In</h1>
-      
-      <form style={{padding: '120px 260px'}} onSubmit={handleSubmit}>
+          <div style={{ height: '100vh', fontFamily: 'Optima' }} verticalAlign='middle'>
+                <div className="column" style={{ padding: '5px 250px', opacity: '0.85' }}>
+                  <header as='h2' color='grey'>
+                      <div style={{ fontFamily: 'Optima', fontSize: '42px', fontWeight: 'bold', 
+                          textAlign: 'center'}}>
+                              Login
+                      </div>
+                  </header>
+                </div>
+
+        <form style={{padding: '200px'}} onSubmit={handleSubmit}>
         <div class="form-floating">
           <input 
             type="text" 
@@ -73,13 +77,20 @@ function LoginForm({ setUser }) {
          </div>
       <br />
     <button class="w-100 btn btn-lg btn-secondary" type="submit">Sign In</button>
-      <p>{errors}</p>
-    <br /><br />
-      <button class="w-100 btn btn-lg btn-secondary"><a href="/" style={{color: 'white'}}>Home</a></button>
+     
+    <p style={{textAlign: 'center'}}><a className="w-100 btn btn-lg btn-secondary" href="/" >Home</a></p>
     </form>
+    <input class="form-control" type="text" value={errors} style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readonly></input>
+  </div>
+  
+         
+      
+      
    
         </div>
+       
     ) 
+  
 }
 
 export default LoginForm; 

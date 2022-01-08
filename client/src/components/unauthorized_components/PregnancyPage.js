@@ -14,7 +14,7 @@ function PregnancyPage(){
         <div>
             <NavBar />
             <div>
-                <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
+                <img src={HeaderImage} className="titleImage" alt="Header"  />
                 <div id="pregnancyTitle" >
                     Pregnancy Journal: Tips & Tricks on How To Get Started
                     <br />

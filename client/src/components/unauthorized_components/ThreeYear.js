@@ -14,7 +14,7 @@ function ThreeYear(){
         <div>
             <NavBar />
             <div>
-                <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
+                <img src={HeaderImage} className="titleImage" alt="Header"  />
                 <div className="title" >
                     Three-Year Journal
                     <br />

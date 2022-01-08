@@ -12,22 +12,23 @@ return(
          <NavBar />
          
         <div>
-            <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
+            <img src={HeaderImage} className="titleImage" alt="Header" />
             <div className="title" >
                 What is a Journal? 
                 <br />
                 <p style={{textAlign: 'center'}}><a className="btn btn-lg btn-danger" href="/signup" >Create Your First Journal</a></p>
             </div>
+          
+                <nav aria-label="breadcrumb" >
+                    <ol className="breadcrumb"  >
+                        <li className="breadcrumb-item"><a href="/">Home</a></li>
+                        <li className="breadcrumb-item active" aria-current="page">What is a Journal?</li>
+                    </ol>
+                </nav> 
+          
+            
        </div>
-
        
-       <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">What is a Journal?</li>
-                </ol>
-        </nav> 
-      
             <p>
                 According to Webster's Dictionary, a journal is a record of experiences, ideas, or reflections 
                 regularly for private use. It can be used to detail everything from your feelings toward a particular situation in your 
@@ -41,6 +42,7 @@ return(
             <p>
                 There exists a plethora of journals for one to document their personal and intimate thoughts Therefore, a large variety of needs and 
                 desires can be documented by keeping a journal. Journal types include:
+            </p>
                 <ul>
                     <li>A daily journal, which can be used to document import and memorable moments from your life.</li>
                     <li>A dream journal, which allows you to document those vivid and far-fetched dreams onto paper.</li>
@@ -50,7 +52,7 @@ return(
                     </li>
                     <li>And many, many more...</li>
                 </ul>
-            </p>
+            
 
             <h1>Why Journal?</h1>
             <p>

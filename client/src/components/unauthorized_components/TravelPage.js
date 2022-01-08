@@ -13,7 +13,7 @@ function TravelPage(){
             <NavBar />
 
              <div>
-                <img src={HeaderImage} className="titleImage" alt="Header" height="400" width="100%" />
+                <img src={HeaderImage} className="titleImage" alt="Header"  />
                 <div id="travelTitle" >
                     Travel Journal: Tips and Tricks on a successful journal log
                     <br />

@@ -45,7 +45,8 @@ function SignUpForm({setUser}) {
 
     return(
         <div id="signUpPageImage" >
-            <div style={{ height: '100vh', fontFamily: 'Optima' }} verticalAlign='middle'>
+            <br />
+            <div style={{ height: '96vh', fontFamily: 'Optima' }} verticalAlign='middle'>
                 <div className="column" style={{ padding: '5px 250px', opacity: '0.85' }}>
                 <header as='h2' color='grey'>
                     <div style={{ fontFamily: 'Optima', fontSize: '42px', fontWeight: 'bold', 
@@ -53,10 +54,11 @@ function SignUpForm({setUser}) {
                             Sign Up
                     </div>
                 </header>
-                <br />
+               
   
         
-         <form onSubmit={handleSubmit} >
+         <form onSubmit={handleSubmit} style={{padding: '50px'}} >
+            
                 <div class="form-floating"  >
                 <input 
                     type="email" 
@@ -107,22 +109,19 @@ function SignUpForm({setUser}) {
                     />
                     <label for="floatingInput">Confirm Password</label>
                 </div>
-                <p>{errors}</p>
-                    <br /><br />
-            <br />
+               
+               
+                 <br /><br /><br /><br />
+            
             <button class="w-100 btn btn-lg btn-secondary" type="submit">Submit</button>
             <br /><br />
-            <button class="w-100 btn btn-lg btn-secondary"><a href="/" style={{color: 'white'}}>Home</a></button>
+            <p style={{textAlign: 'center'}}><a className="w-100 btn btn-lg btn-secondary" href="/" >Home</a></p>
         </form>
-            
-            
-            </div>
-    
-            </div>
-    
-    
-    
+       
+         </div>
+         <input class="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readonly></input> 
      </div>
+ </div>
         
     )
 
