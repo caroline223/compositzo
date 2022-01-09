@@ -20,6 +20,7 @@ function JournalPage({ setUser }){
         })
     }
 
+   
 
     const [text, setText] = useState('')
 
@@ -44,24 +45,24 @@ function JournalPage({ setUser }){
     return(
        <div>
         <div id="journalImage" >
+       
         <nav className="navbar navbar-expand-lg navbar-light bg-light">
-            <div className="container-fluid">
-                <a className="navbar-brand" href="/"><h2 style={{color: 'red'}}>Compositzo</h2></a>
-                <div style={{textAlign: 'right'}}>
-                    <div className="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul className="navbar-nav mr-auto">
-                        <li className="nav-item active">
-                            <a className="nav-link" href="/entries-page" style={{color: 'red'}}>Entries </a>
-                        </li>
-                        <li className="nav-item">
-                            <button type="button" class="btn btn-link" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
-                        </li>
-                        </ul>
-                   </div>
-                   </div>
-                </div>
+                <div className="container-fluid">
+                    <a className="navbar-brand"><h2 style={{color: 'red'}}>Compositzo</h2></a>
+                        <div style={{textAlign: 'right'}}>
+                            <div className="collapse navbar-collapse" id="navbarSupportedContent">
+                                <ul className="navbar-nav mr-auto">
+                                <li className="nav-item active">
+                                    <a className="nav-link" href="/entries-page" style={{color: 'red'}}>Entries </a>
+                                </li>
+                                <li className="nav-item">
+                                <button type="button" class="btn btn-link" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
+                                </li>
+                                </ul>
+                            </div>
+                         </div>
+                 </div>
             </nav>
-
             <form style={{padding: '100px'}}>
             <div class="form-group">
                 <h3>Title</h3>

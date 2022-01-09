@@ -28,6 +28,7 @@ function EntryPage({ setUser }){
     // const entryDisplay = () => entries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
     // const filteredEntryDisplay = () => filteredEntries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
 
+
     const history = useHistory()
 
     const clickLogout = () => {
@@ -45,9 +46,10 @@ function EntryPage({ setUser }){
 
     return(
         <div id="entriesImage">
+           
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand" href="/"><h2 style={{color: 'red'}}>Compositzo</h2></a>
+                    <a className="navbar-brand"><h2 style={{color: 'red'}}>Compositzo</h2></a>
                         <div style={{textAlign: 'right'}}>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav mr-auto">
