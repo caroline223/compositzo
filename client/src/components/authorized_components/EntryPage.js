@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from 'react';
 import { useHistory } from 'react-router-dom'
+import { CardGroup } from 'react-bootstrap';
 import EntryInfo from './entries_page/EntryInfo'
 
 
 function EntryPage({ setUser }){
 
-    // const [entries, setEntries] = useState([])
-    // const [filteredEntries, setFilteredEntries] = useState([])
-    // const [searchInput, setSearchInput] = useState('')
+    const [entries, setEntries] = useState([])
+    const [filteredEntries, setFilteredEntries] = useState([])
+    const [searchInput, setSearchInput] = useState('')
 
-    // useEffect(() => {
-    //     fetch('/entries')
-    //     .then(response => response.json())
-    //     .then((data) => setEntries(data))
-    // }, [])
+    useEffect(() => {
+        fetch('/entries')
+        .then(response => response.json())
+        .then((data) => setEntries(data))
+    }, [])
 
-    // const searchEntries = (event) => {
-    //     setSearchInput(event.target.value)
-    //     if(event.target.value !== ''){
-    //         const filteredData = entries.filter(entry => entry.title.toLowerCase().includes(searchInput.toLowerCase()))
-    //         setFilteredEntries(filteredData)
-    //     } else {
-    //        setFilteredEntries(entries)
-    //     }
-    // }
+    const searchEntries = (event) => {
+        setSearchInput(event.target.value)
+        if(event.target.value !== ''){
+            const filteredData = entries.filter(entry => entry.title.toLowerCase().includes(searchInput.toLowerCase()))
+            setFilteredEntries(filteredData)
+        } else {
+           setFilteredEntries(entries)
+        }
+    }
 
-    // const entryDisplay = () => entries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
-    // const filteredEntryDisplay = () => filteredEntries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
+    const entryDisplay = () => entries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
+    const filteredEntryDisplay = () => filteredEntries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
 
 
     const history = useHistory()
@@ -70,7 +71,8 @@ function EntryPage({ setUser }){
                     <input 
                         class="form-control border-end-0 border rounded-pill" 
                         type="text" 
-                        // onChange={searchEntries}  
+                        placeholder='Search By Title'
+                        onChange={searchEntries}  
                         />
                     <span class="input-group-append">
                         <i class="fa fa-search"></i>
@@ -83,13 +85,11 @@ function EntryPage({ setUser }){
                     <br />
                 <h1 style={{color: 'red'}}>Entries</h1>
                 
+                <CardGroup itemsPerRow={3}>
+                  {filteredEntries.length > 0 ? filteredEntryDisplay(): entryDisplay()}
+              </CardGroup>
             </div>       
-    {/*    
-    //          
              
-    //          <Card.Group itemsPerRow={3}>
-    //              {filteredEntries.length > 0 ? filteredEntryDisplay(): entryDisplay()}
-    //          </Card.Group> */}
          </div>
    )
 }

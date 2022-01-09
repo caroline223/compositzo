@@ -1,4 +1,5 @@
 import React from 'react'
+import { Card, Button } from 'react-bootstrap'
 
 
 function EntryInfo(props) {
@@ -11,38 +12,24 @@ function EntryInfo(props) {
     //     }
     // }
 
-     const {title, date, mood, content } = props.entry
+     const {title, date} = props.entry
 
     return(
         <div>
-            <div class="card" style="width: 18rem;">
-            <img class="card-img-top" src="..." alt="Card" />
-            <div class="card-body">
-                <h5 class="card-title">{title}</h5>
-                <p class="card-text">{date}</p>
-                <p class="card-text">{mood}</p>
-                <p class="card-text">{content}</p>
-                <a href="#" class="btn btn-secondary">Open</a>
-            </div>
+            <Card className="text-center" style={{padding: '10px', margin: '11px'}}>
+                <Card.Body>
+                    <Card.Title style={{fontFamily: 'optima'}}>{title}</Card.Title>
+                    <Card.Text style={{textAlign: 'center'}}>
+                        {date}
+                    </Card.Text>
+                    <Button variant="secondary" style={{fontFamily: 'cursive'}}>View Entry</Button>&nbsp;
+                    <Button variant="secondary" style={{fontFamily: 'cursive'}}>Edit</Button>
+                    <br /> <br />
+                    <Button variant="danger" style={{fontFamily: 'cursive'}}>Delete</Button>
+                </Card.Body>
+            </Card>   
         </div>
 
-        </div>
-        // <Card style={layout.card}>
-           
-        //         <Card.Content  >
-        //             <Card.Header>
-        //                { title } 
-        //             </Card.Header>
-        //             <Card.Description>
-        //                 Date { date }
-        //                 <br />
-        //                 Mood: { mood } 
-        //                 <br />
-        //                 Content: { content }
-        //                 <br />  
-        //             </Card.Description>
-        //         </Card.Content>
-        // </Card>
     )
 }
 

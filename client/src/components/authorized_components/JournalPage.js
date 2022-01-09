@@ -56,7 +56,7 @@ function JournalPage({ setUser }){
                                 <a className="nav-link" href="/entries-page" style={{color: 'red'}}>Entries </a>
                                 </li>
                                 <li className="nav-item">
-                                    <button type="button" class="btn btn-link" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
+                                    <button type="button" class="btn btn" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
                                 </li>
                                 </ul>
                             </div>
@@ -132,6 +132,7 @@ function JournalPage({ setUser }){
                          Save
                     </div>
                 </button>
+            
                 <p style={{textAlign: 'center', fontFamily: 'Optima'}}><a className="btn btn btn-danger" href="/entries-page" >Back</a></p>
             </div>
             
