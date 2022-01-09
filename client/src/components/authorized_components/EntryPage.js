@@ -49,7 +49,7 @@ function EntryPage({ setUser }){
            
            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
-                    <a className="navbar-brand"><h2 style={{color: 'red'}}>Compositzo</h2></a>
+                    <a className="navbar-brand" href="/entries-page"><h2 style={{color: 'red'}}>Compositzo</h2></a>
                         <div style={{textAlign: 'right'}}>
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav mr-auto">
@@ -57,7 +57,7 @@ function EntryPage({ setUser }){
                                     <a className="nav-link" href="/journal-page" style={{color: 'red'}}>New Entry </a>
                                 </li>
                                 <li className="nav-item">
-                                <button type="button" class="btn btn-link" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
+                                <button type="button" class="btn btn" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
                                 </li>
                                 </ul>
                             </div>
