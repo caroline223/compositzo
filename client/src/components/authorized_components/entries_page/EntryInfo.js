@@ -4,19 +4,22 @@ import { Card, Button } from 'react-bootstrap'
 
 function EntryInfo(props) {
 
-    // const layout = {
-    //     card: {
-    //         backgroundColor: "#bec7a6", 
-    //         opacity: "0.8",
-    //         borderRadius: "10px"
-    //     }
-    // }
+    
 
      const {title, date} = props.entry
 
+     const removeEntry = (event) => {
+        const id = parseInt(event.target.id)
+        if(window.confirm("Are you sure?"))
+        fetch(`/entries/${id}`, {
+            method: 'DELETE'
+        })
+        .then(() => { props.deleteEntry(id) })
+    }
+
     return(
         <div>
-            <Card className="text-center" style={{padding: '10px', margin: '11px'}}>
+            <Card className="text-center"  style={{padding: '10px', margin: '11px'}}>
                 <Card.Body>
                     <Card.Title style={{fontFamily: 'optima'}}>{title}</Card.Title>
                     <Card.Text style={{textAlign: 'center'}}>
@@ -25,7 +28,7 @@ function EntryInfo(props) {
                     <Button variant="secondary" style={{fontFamily: 'cursive'}}>View Entry</Button>&nbsp;
                     <Button variant="secondary" style={{fontFamily: 'cursive'}}>Edit</Button>
                     <br /> <br />
-                    <Button variant="danger" style={{fontFamily: 'cursive'}}>Delete</Button>
+                    <Button variant="danger" style={{fontFamily: 'cursive'}} onClick={removeEntry} id={props.entry.id}>Delete</Button>
                 </Card.Body>
             </Card>   
         </div>

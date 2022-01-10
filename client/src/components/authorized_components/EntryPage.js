@@ -26,8 +26,8 @@ function EntryPage({ setUser }){
         }
     }
 
-    const entryDisplay = () => entries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
-    const filteredEntryDisplay = () => filteredEntries.map((entry) => <EntryInfo key={entry.id} entry={entry} />)
+    const entryDisplay = () => entries.map((entry) => <EntryInfo key={entry.id} entry={entry} deleteEntry={deleteEntry} />)
+    const filteredEntryDisplay = () => filteredEntries.map((entry) => <EntryInfo key={entry.id} entry={entry} deleteEntry={deleteEntry} />)
 
 
     const history = useHistory()
@@ -44,6 +44,13 @@ function EntryPage({ setUser }){
             }
         })
     }
+
+    const deleteEntry = (id) => {
+        console.log(id)
+        const remainingEntries = entries.filter(b => b.id !== id)
+            setEntries(remainingEntries)
+    }
+
 
     return(
         <div id="entriesImage">
@@ -85,7 +92,7 @@ function EntryPage({ setUser }){
                     <br />
                 <h1 style={{color: 'red'}}>Entries</h1>
                 
-                <CardGroup itemsPerRow={3}>
+                <CardGroup>
                   {filteredEntries.length > 0 ? filteredEntryDisplay(): entryDisplay()}
               </CardGroup>
             </div>       

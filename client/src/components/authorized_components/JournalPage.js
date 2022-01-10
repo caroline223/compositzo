@@ -5,7 +5,45 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 
 function JournalPage({ setUser }){
 
+    const [title, setTitle] = useState('')
+    const [date, setDate] = useState('')
+    const [feeling, setFeeling] = useState('happy')
+    const [content, setContent] = useState('')
+    const [errors, setErrors] = useState([])
+    const [text, setText] = useState('')
+
     const history = useHistory()
+
+    const handleSubmit = (event) => {
+        event.preventDefault()
+        fetch('/entries', {
+          method: 'POST',
+          headers: {
+              "Content-Type": "application/json"
+          },
+          body: JSON.stringify({
+              title,
+              date,
+              feeling,
+              content
+          })
+        })
+        .then(response => {
+            if(response.ok){
+                response.json()
+                .then(user => {
+                    setUser(user)
+                    history.push('/entries-page')
+                })
+            }
+            else {
+                response.json()
+                .then(errors => {
+                    setErrors(errors.errors)
+                })
+            }
+        })
+    }
 
     const clickLogout = () => {
         fetch(`/logout`, {
@@ -22,25 +60,23 @@ function JournalPage({ setUser }){
 
    
 
-    const [text, setText] = useState('')
-
-    const options = [
-        { key: 1, text: 'Happy', value: 1 },
-        { key: 2, text: 'Sad', value: 2 },
-        { key: 3, text: 'Angry', value: 3 },
-        { key: 4, text: 'Excited', value: 4 },
-        { key: 5, text: 'Overwhelmed', value: 5 },
-        { key: 6, text: 'Depressed', value: 6 },
-        { key: 7, text: 'Anxious', value: 7 },
-        { key: 8, text: 'Nervous', value: 8 },
-        { key: 9, text: 'Frustrated', value: 9 },
-        { key: 10, text: 'Distracted', value: 10 },
-        { key: 11, text: 'Jealous', value: 11 },
-        { key: 12, text: 'Hopeless', value: 12 },
-        { key: 13, text: 'Exhausted', value: 13 },
-        { key: 14, text: 'Lonely', value: 14 },
-        { key: 15, text: 'Embarrassed', value: 15 },
-      ]
+    // const options = [
+    //     { key: 1, text: 'Happy', value: 1 },
+    //     { key: 2, text: 'Sad', value: 2 },
+    //     { key: 3, text: 'Angry', value: 3 },
+    //     { key: 4, text: 'Excited', value: 4 },
+    //     { key: 5, text: 'Overwhelmed', value: 5 },
+    //     { key: 6, text: 'Depressed', value: 6 },
+    //     { key: 7, text: 'Anxious', value: 7 },
+    //     { key: 8, text: 'Nervous', value: 8 },
+    //     { key: 9, text: 'Frustrated', value: 9 },
+    //     { key: 10, text: 'Distracted', value: 10 },
+    //     { key: 11, text: 'Jealous', value: 11 },
+    //     { key: 12, text: 'Hopeless', value: 12 },
+    //     { key: 13, text: 'Exhausted', value: 13 },
+    //     { key: 14, text: 'Lonely', value: 14 },
+    //     { key: 15, text: 'Embarrassed', value: 15 },
+    //   ]
 
     return(
        <div>
@@ -63,17 +99,16 @@ function JournalPage({ setUser }){
                          </div>
                  </div>
             </nav>
-            <form style={{padding: '100px'}}>
+            <form style={{padding: '100px'}} onSubmit={handleSubmit}>
             <div class="form-group">
                 <h3>Title</h3>
                 <input 
                     type="text" 
                     class="form-control" 
                     id="exampleFormControlInput1" 
-                    placeholder="name@example.com" 
-                    // value={email}
-                    // onChange={(e) => setEmail(e.target.value)}
-                    // required
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    required
                     />     
             </div>
             <br />
@@ -82,9 +117,9 @@ function JournalPage({ setUser }){
                 <input 
                      type="date"
                      class="form-control" 
-                     // value={email}
-                     // onChange={(e) => setEmail(e.target.value)}
-                     // required
+                     value={date}
+                     onChange={(e) => setDate(e.target.value)}
+                     required
                 />
             </div>
             <br />
@@ -93,7 +128,12 @@ function JournalPage({ setUser }){
                
             </div>
             <div class="form-group">
-                <select class="form-select form-select-sm" aria-label=".form-select-sm example" options={options}>
+                <select class="form-select form-select-sm" 
+                        aria-label=".form-select-sm example" 
+                        value={feeling}
+                        onChange={(e) => setFeeling(e.target.value)}
+                        required
+                        >
                     <option value="1">Happy</option>
                     <option value="2">Sad</option>
                     <option value="3">Angry</option>
@@ -109,6 +149,7 @@ function JournalPage({ setUser }){
                     <option value="13">Exhausted</option>
                     <option value="14">Lonely</option>
                     <option value="5">Embarrassed</option>
+                    
                 </select>    
             </div>
             <br />
@@ -117,17 +158,17 @@ function JournalPage({ setUser }){
                 <div className='editor'>   
                     <CKEditor 
                         editor={ClassicEditor}
-                        data={text}
+                        data={content}
                         onChange={(event, editor) => {
                             const data = editor.getData()
-                            setText(data)
+                            setContent(data)
                         }}
                     />
                 </div>
             </div>
             <br /><br />
             <div style={{textAlign: 'center'}}>
-                <button type="button" className="btn btn-danger">
+                <button type="submit" className="btn btn-danger">
                      <div style={{ fontFamily: 'Optima'}}>
                          Save
                     </div>
@@ -138,6 +179,7 @@ function JournalPage({ setUser }){
             
         </form>
 
+        <input class="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readonly></input> 
      </div>
 
         </div>
