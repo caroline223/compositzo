@@ -15,17 +15,11 @@ ActiveRecord::Schema.define(version: 2022_01_02_110648) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "contents", force: :cascade do |t|
-    t.string "comment"
-    t.string "mood", default: "happy"
-    t.integer "entry_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-  end
-
   create_table "entries", force: :cascade do |t|
     t.date "date"
     t.string "title"
+    t.string "mood", default: "Happy"
+    t.string "content"
     t.integer "user_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
