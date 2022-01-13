@@ -7,14 +7,14 @@ function JournalPage({ setUser }){
 
     const [title, setTitle] = useState('')
     const [date, setDate] = useState('')
-    const [feeling, setFeeling] = useState('happy')
+    const [mood, setMood] = useState('Happy')
     const [content, setContent] = useState('')
     const [errors, setErrors] = useState([])
-    const [text, setText] = useState('')
+    // const [text, setText] = useState('')
 
     const history = useHistory()
 
-    const handleSubmit = (event) => {
+    const createEntry = (event) => {
         event.preventDefault()
         fetch('/entries', {
           method: 'POST',
@@ -24,8 +24,8 @@ function JournalPage({ setUser }){
           body: JSON.stringify({
               title,
               date,
-              feeling,
-              content
+              content, 
+              mood
           })
         })
         .then(response => {
@@ -58,25 +58,6 @@ function JournalPage({ setUser }){
         })
     }
 
-   
-
-    // const options = [
-    //     { key: 1, text: 'Happy', value: 1 },
-    //     { key: 2, text: 'Sad', value: 2 },
-    //     { key: 3, text: 'Angry', value: 3 },
-    //     { key: 4, text: 'Excited', value: 4 },
-    //     { key: 5, text: 'Overwhelmed', value: 5 },
-    //     { key: 6, text: 'Depressed', value: 6 },
-    //     { key: 7, text: 'Anxious', value: 7 },
-    //     { key: 8, text: 'Nervous', value: 8 },
-    //     { key: 9, text: 'Frustrated', value: 9 },
-    //     { key: 10, text: 'Distracted', value: 10 },
-    //     { key: 11, text: 'Jealous', value: 11 },
-    //     { key: 12, text: 'Hopeless', value: 12 },
-    //     { key: 13, text: 'Exhausted', value: 13 },
-    //     { key: 14, text: 'Lonely', value: 14 },
-    //     { key: 15, text: 'Embarrassed', value: 15 },
-    //   ]
 
     return(
        <div>
@@ -99,7 +80,7 @@ function JournalPage({ setUser }){
                          </div>
                  </div>
             </nav>
-            <form style={{padding: '100px'}} onSubmit={handleSubmit}>
+            <form style={{padding: '100px'}} onSubmit={createEntry}>
             <div class="form-group">
                 <h3>Title</h3>
                 <input 
@@ -123,37 +104,33 @@ function JournalPage({ setUser }){
                 />
             </div>
             <br />
-            <div class="form-group">
-               <h3>How Are You Feeling?</h3>
-               
-            </div>
-            <div class="form-group">
+            
+            <div class="form-group" >
+            <h3>How Are You Feeling?</h3>
                 <select class="form-select form-select-sm" 
                         aria-label=".form-select-sm example" 
-                        value={feeling}
-                        onChange={(e) => setFeeling(e.target.value)}
+                        value={mood}
+                        onChange={(e) => setMood(e.target.value)}
                         required
                         >
-                    <option value="1">Happy</option>
-                    <option value="2">Sad</option>
-                    <option value="3">Angry</option>
-                    <option value="4">Excited</option>
-                    <option value="5">Overwhelmed</option>
-                    <option value="6">Depressed</option>
-                    <option value="7">Anxious</option>
-                    <option value="8">Nervous</option>
-                    <option value="9">Frustrated</option>
-                    <option value="10">Distracted</option>
-                    <option value="11">Jealous</option>
-                    <option value="12">Hopeless</option>
-                    <option value="13">Exhausted</option>
-                    <option value="14">Lonely</option>
-                    <option value="5">Embarrassed</option>
+                    <option value="Happy">Happy</option>
+                    <option value="Sad">Sad</option>
+                    <option value="Angry">Angry</option>
+                    <option value="Excited">Excited</option>
+                    <option value="Overwhelmed">Overwhelmed</option>
+                    <option value="Depressed">Depressed</option>
+                    <option value="Anxious">Anxious</option>
+                    <option value="Nervous">Nervous</option>
+                    <option value="Frustrated">Frustrated</option>
+                    <option value="Distracted">Distracted</option>
+                    <option value="Jealous">Jealous</option>
+                    <option value="Hopeless">Hopeless</option>
+                    <option value="Exhausted">Exhausted</option>
+                    <option value="Lonely">Lonely</option>
+                    <option value="Embarrassed">Embarrassed</option>
                     
-                </select>    
-            </div>
-            <br />
-            <div class="form-group">
+                </select> 
+
                 <h3>Content</h3>
                 <div className='editor'>   
                     <CKEditor 
@@ -164,8 +141,10 @@ function JournalPage({ setUser }){
                             setContent(data)
                         }}
                     />
-                </div>
+                </div>   
             </div>
+            <br />
+           
             <br /><br />
             <div style={{textAlign: 'center'}}>
                 <button type="submit" className="btn btn-danger">

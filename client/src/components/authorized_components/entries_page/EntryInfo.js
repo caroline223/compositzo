@@ -4,9 +4,8 @@ import { Card, Button } from 'react-bootstrap'
 
 function EntryInfo(props) {
 
-    
 
-     const {title, date} = props.entry
+     const {id, title, date} = props.entry
 
      const removeEntry = (event) => {
         const id = parseInt(event.target.id)
@@ -25,8 +24,7 @@ function EntryInfo(props) {
                     <Card.Text style={{textAlign: 'center'}}>
                         {date}
                     </Card.Text>
-                    <Button variant="secondary" style={{fontFamily: 'cursive'}}>View Entry</Button>&nbsp;
-                    <Button variant="secondary" style={{fontFamily: 'cursive'}}>Edit</Button>
+                    <Button variant="secondary" style={{fontFamily: 'cursive'}} href={`/entries/${id}`}>View Entry</Button>&nbsp;
                     <br /> <br />
                     <Button variant="danger" style={{fontFamily: 'cursive'}} onClick={removeEntry} id={props.entry.id}>Delete</Button>
                 </Card.Body>
