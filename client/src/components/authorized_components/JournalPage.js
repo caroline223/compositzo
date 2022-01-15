@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import parse from 'html-react-parser'
+
 
 function JournalPage({ setUser }){
 
@@ -10,6 +12,7 @@ function JournalPage({ setUser }){
     const [mood, setMood] = useState('Happy')
     const [content, setContent] = useState('')
     const [errors, setErrors] = useState([])
+   
     // const [text, setText] = useState('')
 
     const history = useHistory()
@@ -24,7 +27,7 @@ function JournalPage({ setUser }){
           body: JSON.stringify({
               title,
               date,
-              content, 
+              content,
               mood
           })
         })
@@ -58,7 +61,9 @@ function JournalPage({ setUser }){
         })
     }
 
-
+   
+   
+  
     return(
        <div>
         <div id="journalImage" >
@@ -70,7 +75,10 @@ function JournalPage({ setUser }){
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav mr-auto">
                                 <li className="nav-item active">
-                                <a className="nav-link" href="/entries-page" style={{color: 'red'}}>Entries </a>
+                                    <a className="nav-link" href="/entries-page" style={{color: 'red'}}>Entries </a>
+                                </li>
+                                <li className="nav-item active">
+                                    <a className="nav-link" href="/users/user-info"  style={{color: 'red'}}>My Account </a>
                                 </li>
                                 <li className="nav-item">
                                     <button type="button" class="btn btn" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
@@ -132,16 +140,16 @@ function JournalPage({ setUser }){
                 </select> 
 
                 <h3>Content</h3>
-                <div className='editor'>   
+                <div className='editor'> 
                     <CKEditor 
-                        editor={ClassicEditor}
-                        data={content}
-                        onChange={(event, editor) => {
-                            const data = editor.getData()
-                            setContent(data)
-                        }}
-                    />
-                </div>   
+                            editor={ClassicEditor}
+                            value={content}
+                            onChange={(event, editor) => {
+                                const data = editor.getData() 
+                               setContent(data)
+                            }}
+                        />       
+                </div>  
             </div>
             <br />
            
@@ -152,7 +160,6 @@ function JournalPage({ setUser }){
                          Save
                     </div>
                 </button>
-            
                 <p style={{textAlign: 'center', fontFamily: 'Optima'}}><a className="btn btn btn-danger" href="/entries-page" >Back</a></p>
             </div>
             

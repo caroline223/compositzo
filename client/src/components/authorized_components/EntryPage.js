@@ -16,6 +16,7 @@ function EntryPage({ setUser }){
         .then((data) => setEntries(data))
     }, [])
 
+
     const searchEntries = (event) => {
         setSearchInput(event.target.value)
         if(event.target.value !== ''){
@@ -51,6 +52,8 @@ function EntryPage({ setUser }){
             setEntries(remainingEntries)
     }
 
+   
+
 
     return(
         <div id="entriesImage">
@@ -63,6 +66,9 @@ function EntryPage({ setUser }){
                                 <ul className="navbar-nav mr-auto">
                                 <li className="nav-item active">
                                     <a className="nav-link" href="/journal-page" style={{color: 'red'}}>New Entry </a>
+                                </li>
+                                <li className="nav-item active">
+                                    <a className="nav-link"  style={{color: 'red'}} href="/users/user-info" >My Account </a>
                                 </li>
                                 <li className="nav-item">
                                 <button type="button" class="btn btn" style={{color: 'red'}} onClick={clickLogout}>Logout</button>

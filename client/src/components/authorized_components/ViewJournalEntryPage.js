@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
+
 // import ViewJournalEntryInfo from './ViewJournalEntryInfo'
 
 
-function ViewJournalEntryContainer(){
+function ViewJournalEntryPage(){
 
     const [data, setData] = useState([])
 
@@ -25,7 +26,8 @@ function ViewJournalEntryContainer(){
                 <Card.Header style={{fontFamily: 'optima'}}>{title}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                       As of right now, I am in a(n) {mood} mood. <br /><br />
+                    At this moment, I am feeling {mood}. 
+                    <br /><br />
                     {content}
                     </Card.Text>
                 </Card.Body>
@@ -43,4 +45,4 @@ function ViewJournalEntryContainer(){
 
 
 }
-export default ViewJournalEntryContainer
+export default ViewJournalEntryPage 
