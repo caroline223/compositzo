@@ -50,7 +50,7 @@ class EntriesController < ApplicationController
     end
 
     def entry_params
-        params.require(:entry).permit(:date, :title, :user_id)
+        params.require(:entry).permit(:date, :title, :user_id, :mood, :content)
     end
 
    
