@@ -39,7 +39,7 @@ function LoginForm({ setUser }) {
 
     return(
         <div id="loginPageImage" >
-          <div style={{ height: '100vh', fontFamily: 'Optima' }} verticalAlign='middle'>
+          <div style={{ height: '100vh', fontFamily: 'Optima' }} verticalalign='middle'>
                 <div className="column" style={{ padding: '5px 250px', opacity: '0.85' }}>
                   <header as='h2' color='grey'>
                       <div style={{ fontFamily: 'Optima', fontSize: '42px', fontWeight: 'bold', 
@@ -50,37 +50,37 @@ function LoginForm({ setUser }) {
                 </div>
 
         <form style={{padding: '200px'}} onSubmit={handleSubmit}>
-        <div class="form-floating">
+        <div className="form-floating">
           <input 
             type="text" 
-            class="form-control" 
+            className="form-control" 
             id="floatingInput" 
             placeholder="Username" 
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             required
             />
-          <label for="floatingInput">Username</label>
+          <label htmlFor="floatingInput">Username</label>
         </div>
       <br />
-        <div class="form-floating">
+        <div className="form-floating">
          <input 
                 type="password" 
-                class="form-control" 
+                className="form-control" 
                 id="floatingPassword" 
                 placeholder="Password" 
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
                 />
-          <label for="floatingPassword">Password</label>
+          <label htmlFor="floatingPassword">Password</label>
          </div>
       <br />
-    <button class="w-100 btn btn-lg btn-secondary" type="submit">Sign In</button>
+    <button className="w-100 btn btn-lg btn-secondary" type="submit">Sign In</button>
      
     <p style={{textAlign: 'center'}}><a className="w-100 btn btn-lg btn-secondary" href="/" >Home</a></p>
     </form>
-    <input class="form-control" type="text" value={errors} style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readonly></input>
+    <input className="form-control" type="text" value={errors} style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input>
   </div>
   
          

@@ -23,9 +23,9 @@ function AboutPage() {
        </div>
         <br />
          <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb justify-content-center" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">About Us</li>
+                <ol className="breadcrumb justify-content-center" >
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">About Us</li>
                 </ol>
         </nav> 
 

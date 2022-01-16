@@ -24,18 +24,18 @@ function ContactPage(){
             </div>
         <br />
          <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb justify-content-center" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Contact Us</li>
+                <ol className="breadcrumb justify-content-center" >
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Contact Us</li>
                 </ol>
             </nav> 
         <br />
 
         <h1>Follow Us On Our Social Media Platforms!</h1>
-        <table class="table table-striped" style={{padding: '20px'}}>
+        <table className="table table-striped" style={{padding: '20px'}}>
             <tbody style={{textAlign: 'center'}}>
                 <tr>
-                    <td><FontAwesomeIcon icon={faInstagram} color='purple' size=''/>&nbsp;Instagram</td>
+                    <td><FontAwesomeIcon icon={faInstagram} color='purple' />&nbsp;Instagram</td>
                     <td>@Compositzo</td>
                 </tr>
                 <tr>

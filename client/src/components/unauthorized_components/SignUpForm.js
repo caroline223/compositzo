@@ -46,7 +46,7 @@ function SignUpForm({setUser}) {
     return(
         <div id="signUpPageImage" >
             <br />
-            <div style={{ height: '96vh', fontFamily: 'Optima' }} verticalAlign='middle'>
+            <div style={{ height: '96vh', fontFamily: 'Optima' }} verticalalign='middle'>
                 <div className="column" style={{ padding: '5px 250px', opacity: '0.85' }}>
                 <header as='h2' color='grey'>
                     <div style={{ fontFamily: 'Optima', fontSize: '42px', fontWeight: 'bold', 
@@ -59,67 +59,67 @@ function SignUpForm({setUser}) {
         
          <form onSubmit={handleSubmit} style={{padding: '50px'}} >
             
-                <div class="form-floating"  >
+                <div className="form-floating"  >
                 <input 
                     type="email" 
-                    class="form-control" 
+                    className="form-control" 
                     id="floatingInput" 
                     placeholder="name@example.com" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
                 />
-                <label for="floatingInput" >Email Address</label>
+                <label htmlFor="floatingInput" >Email Address</label>
                 </div>
                     <br />
-                <div class="form-floating">
+                <div className="form-floating">
                 <input 
                     type="text" 
-                    class="form-control" 
+                    className="form-control" 
                     id="floatingInput" 
                     placeholder="Username" 
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
                 />
-                <label for="floatingInput">Create Username</label>
+                <label htmlFor="floatingInput">Create Username</label>
                 </div>
                     <br />
-                <div class="form-floating">
+                <div className="form-floating">
                     <input 
                         type="password" 
-                        class="form-control" 
+                        className="form-control" 
                         id="password" 
                         placeholder="Password" 
                         value={password}
                         onChange={(e) => setPassword(e.target.value)}
                         required
                     />
-                    <label for="floatingPassword">Create Password</label>
+                    <label htmlFor="floatingPassword">Create Password</label>
                 </div>
                 <br />
-                <div class="form-floating">
+                <div className="form-floating">
                     <input 
                     type="password" 
-                    class="form-control" 
+                    className="form-control" 
                     id="password_confirmation" 
                     placeholder="Password" 
                     value={passwordConfirmation}
                     onChange={(e) => setPasswordConfirmation(e.target.value)}
                     required
                     />
-                    <label for="floatingInput">Confirm Password</label>
+                    <label htmlFor="floatingInput">Confirm Password</label>
                 </div>
                
                
                  <br /><br /><br /><br />
             
-            <button class="w-100 btn btn-lg btn-secondary" type="submit">Submit</button>
+            <button className="w-100 btn btn-lg btn-secondary" type="submit">Submit</button>
             <br /><br />
             <p style={{textAlign: 'center'}}><a className="w-100 btn btn-lg btn-secondary" href="/" >Home</a></p>
         </form>
        
          </div>
-         <input class="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readonly></input> 
+         <input className="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input> 
      </div>
  </div>
         

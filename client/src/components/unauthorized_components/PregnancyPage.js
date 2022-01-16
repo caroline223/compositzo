@@ -23,10 +23,10 @@ function PregnancyPage(){
             </div>
             <br />
            <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb justify-content-center" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                     <li class="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Pregnancy Journal</li>
+                <ol className="breadcrumb justify-content-center" >
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                     <li className="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Pregnancy Journal</li>
                 </ol>
             </nav> 
 
@@ -48,6 +48,9 @@ function PregnancyPage(){
 
             <p>
                 Below are the top eight ways that you can get the most out of your pregnancy journal:
+               
+            </p>
+
                 <ol>
                     <li>Jot down any unusual pregnancy symptoms when they occur to ensure you'll remember to ask 
                         the doctor about them later.
@@ -63,7 +66,6 @@ function PregnancyPage(){
                         entries to collect precious memories. 
                     </li>
                 </ol>
-            </p>
 
             <h1>Ideas and Prompts</h1>
 
@@ -78,13 +80,15 @@ function PregnancyPage(){
                 You will always remember the moment you found out you were pregnant. However, as the months and years go by,
                 some of the details may start to get a little fuzzy to you. That's why some of the most popular pregnancy prompts revolve around the
                 exciting--and very intense--first few weeks. Some examples of ideas to write about include:
+                
+            </p>
+
                 <ul>
                     <li>What pushed you to take a pregancy test?</li>
                     <li>What was your initial reaction when you saw the positive pregancy test?</li>
                     <li>How did you feel when you saw the first ultrasound?</li>
                     <li>What was your first pregnancy symptom?</li>
                 </ul>
-            </p>
 
             <h2>Body Changes</h2>
             <p>
@@ -92,19 +96,21 @@ function PregnancyPage(){
                 Make sure to record these changes so that when your child looks back at this, they would know exactly what you went through to bring 
                 them into this world! Additionally, you might want to have an idea of which symptoms you felt in case you want to be prepared
                 for any future pregnancies. Some good prompts include:
-                <ul>
-                    <li>Morning Sickness</li>
-                    <li>Food Cravings</li>
-                    <li>Favorite and Least Favorite Pregnancy Symptoms</li>
-                    <li>Emotional Changes Throughout the Pregnancy</li>
-                </ul>
             </p>
+
+            <ul>
+                <li>Morning Sickness</li>
+                <li>Food Cravings</li>
+                <li>Favorite and Least Favorite Pregnancy Symptoms</li>
+                <li>Emotional Changes Throughout the Pregnancy</li>
+            </ul>
 
             <h2>All About the Baby</h2>
             <p>
                 The most exciting pregnancy diary ideas to write about involve the actual baby growing inside of you.
                 Thinking about your baby is likely the most exciting past of pregnancy because it truly makes all of the stretch-marks,
                 weight-gains, morning sickness, as well as a plethora of other symptoms worth it. Some good prompts may include:
+            </p>
 
                 <ul>
                     <li>What was your initial reaction when you first felt your baby move?</li>
@@ -113,7 +119,6 @@ function PregnancyPage(){
                     <li>How did you choose their name?</li>
                     <li>What are your hopes and dreams for your baby's future?</li>
                 </ul>
-            </p>
 
             <br />
            <SignUpGrid />

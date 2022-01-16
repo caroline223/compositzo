@@ -22,10 +22,10 @@ function TravelPage(){
              </div>
              <br />
              <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb justify-content-center" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                     <li class="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Travel Journal</li>
+                <ol className="breadcrumb justify-content-center" >
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                     <li className="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Travel Journal</li>
                 </ol>
         </nav> 
 
@@ -78,6 +78,9 @@ function TravelPage(){
             <h2>Write about your trip after you leave</h2>
             <p>
                 Some questions to include:
+               
+            </p>
+
                 <ul>
                     <li>What was the trip like?</li>
                     <li>What did you learn?</li>
@@ -85,12 +88,13 @@ function TravelPage(){
                     <li>What dissappointed you?</li>
                     <li>Is there anything about the trip you would change?</li>
                 </ul>
-            </p>
 
             <h1>Inspiration Travel Journal Ideas</h1>
 
             <p>
                 Here are some great travel journal ideas to get your creativity flowing.
+            </p>
+
                 <ol>
                     <li>What is the purpose of your trip?</li>
                     <li>What are your expectations?</li>
@@ -100,7 +104,6 @@ function TravelPage(){
                     <li>What would you have changed from the trip?</li>
                     <li>Where do you want to travel next?</li>
                 </ol>
-            </p>
 
            <br />
            <SignUpGrid />

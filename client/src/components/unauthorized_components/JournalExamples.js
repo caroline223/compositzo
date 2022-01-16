@@ -23,9 +23,9 @@ function JournalExamples(){
             </div>
             <br />
             <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb justify-content-center" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Journal Examples</li>
+                <ol className="breadcrumb justify-content-center" >
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Journal Examples</li>
                 </ol>
         </nav> 
 
@@ -34,6 +34,7 @@ function JournalExamples(){
             thoughts, feelings, emotions, and actions. Some people may use journaling to jot down notes on a daily basis. Others 
             may use journaling to document their most initimate thoughts, feelings, and emotions as they are experiencing them. Whatever the case may be,
             here are some journals that many writers find rewarding:
+        </p>
 
             <ul>
                 <li><span style={{fontWeight: 'bold'}}>School Journal</span>: Used to keep track of school assigmnets, due dates, upcoming exams, etc.</li>
@@ -43,12 +44,11 @@ function JournalExamples(){
                 <li><span style={{fontWeight: 'bold'}}>Gratitude Journal</span>: Showing gratitude for the positive things/people in your life.</li>  
             </ul>
 
-        </p>
-
         <h1>Journal Examples</h1>
 
         <p>
             Still stuck? Check out below for some inspiration:
+        </p>
 
             <ul>
                 <li><a href="/https://offbeatbride.com/">Offbeat Bride: </a> Stories from a bride that didn't want a typical wedding.</li>
@@ -57,7 +57,6 @@ function JournalExamples(){
                 <li><a href="/http://personapaper.com/article/11378-making-soup-for-a-night-in">Leftover Soup:</a> This journal writer is keeping track of recipes she creates in the spur of the moment.</li>
                 <li><a href="https://notalwaysright.com/">Not Always Right:</a> Great stories that prove the customer really isn't always right.</li>
             </ul>
-        </p>
 
         <p>
             Feeling inspired? Click below to crete a new account so that you would be able to write whenever and wherever you choose!

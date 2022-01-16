@@ -23,10 +23,10 @@ function ThreeYear(){
             </div>
             <br />
         <nav aria-label="breadcrumb"  >
-                <ol class="breadcrumb justify-content-center" >
-                    <li class="breadcrumb-item"><a href="/">Home</a></li>
-                    <li class="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Three Year Journal</li>
+                <ol className="breadcrumb justify-content-center" >
+                    <li className="breadcrumb-item"><a href="/">Home</a></li>
+                    <li className="breadcrumb-item"><a href="/introduction">What is a Journal?</a></li>
+                    <li className="breadcrumb-item active" aria-current="page">Three Year Journal</li>
                 </ol>
         </nav>  
 
@@ -35,7 +35,9 @@ function ThreeYear(){
         <p>
             Rather than just a random collection of thoughts or notes, having a journal allows you to record the important people
             and events that matter the most to you. A good--and useful--three year journal allows you to do the following:
-            <ul>
+        </p>
+
+            <ul style={{textAlign: '40px'}}>
                 <li><span style={{fontWeight: 'bold'}}>Document the things that matter the most to you.</span> An effective journal is one that captures the important people 
                     and images in your life while outlining the things you wish to accomplish later in life. 
                 </li>
@@ -46,10 +48,9 @@ function ThreeYear(){
                 Tracking not only where you are at, but outlining where you want to go?
                 </li>
             </ul>
-        </p>
 
         <h1>Use these <a href="/introduction">writing prompts</a> to help you:</h1>
-        <p>
+        
             <ol>
                 <li>What do you really need to become a happier person and make life more enjoyable?</li>
                 <li>What are some of your short-term and long-term financial goals?</li>
@@ -58,7 +59,7 @@ function ThreeYear(){
                 <li>Is there any new skill/hobby that you would like to learn?</li>
                 <li>Are you able to break down large goals into smaller bits?</li>
             </ol>
-        </p>
+        
         <p>
             Approach these topics with an honest conversation with yourself. It is very important to choose goals
             that you are passionate about because you will need alot of enthusiasm to staying focused in order to turn 
