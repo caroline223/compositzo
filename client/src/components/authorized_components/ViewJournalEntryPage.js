@@ -26,8 +26,9 @@ function ViewJournalEntryPage(){
                 <Card.Header style={{fontFamily: 'optima'}}>{title}</Card.Header>
                 <Card.Body>
                     <Card.Text>
-                    At this moment, I am feeling {mood}.
-                    <br />
+                    At this moment, I am feeling { mood }.
+                    </Card.Text>
+                    <Card.Text>
                     {parse(`${content}`)}
                     </Card.Text>
                 </Card.Body>
