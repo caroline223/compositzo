@@ -63,7 +63,6 @@ function SignUpForm({setUser}) {
                 <input 
                     type="email" 
                     className="form-control" 
-                    id="floatingInput" 
                     placeholder="name@example.com" 
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
@@ -76,7 +75,6 @@ function SignUpForm({setUser}) {
                 <input 
                     type="text" 
                     className="form-control" 
-                    id="floatingInput" 
                     placeholder="Username" 
                     value={username}
                     onChange={(e) => setUsername(e.target.value)}
