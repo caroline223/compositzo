@@ -171,18 +171,13 @@ function EditJournalEntryPage({ setUser }){
             </div>
             
         </form>
+        <input className="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input> 
 
-            </div>
-             
-            <input className="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input> 
+            </div> 
      
         </div>
-     
-
         
     )
-
-
 
 }
 export default EditJournalEntryPage

@@ -1,20 +1,24 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
+import { useParams } from 'react-router-dom'
 
 
 function AccountInfoPage(){
 
-    const [data, setData] = useState([])
+    const [username, setUsername] = useState('')
+    const [email, setEmail] = useState('')
+
+    const { id } = useParams()
 
     useEffect(() => {
-        fetch(``)
+        fetch(`/users/${id}`)
         .then(response => response.json())
-        .then((data) => setData(data))
-    }, [])
+        .then((user) => {
+            setUsername(user.username)
+            setEmail(user.email)
+        })
+    }, [id])
 
-
-    const { username, email } = data  
-    
     return(
         <div id="myJournalImage">
         <br />
