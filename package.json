@@ -11,7 +11,12 @@
     "heroku-postbuild": "npm run clean && npm run build && npm run deploy"
   },
   "dependencies": {
-    "semantic-ui-css": "^2.4.1",
-    "semantic-ui-react": "^2.0.4"
+    "@ckeditor/ckeditor5-build-classic": "^31.1.0",
+    "@ckeditor/ckeditor5-react": "^3.0.3",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@fortawesome/free-brands-svg-icons": "^5.15.4",
+    "@fortawesome/free-solid-svg-icons": "^5.15.4",
+    "@fortawesome/react-fontawesome": "^0.1.16",
+    "bootstrap": "^5.1.3"
   }
 }
