@@ -1,20 +1,32 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import parse from 'html-react-parser'
+import { useParams } from 'react-router-dom'
 
 
 function ViewJournalEntryPage(){
 
-    const [data, setData] = useState([])
+    const [title, setTitle] = useState('')
+    const [mood, setMood] = useState('')
+    const [date, setDate] = useState('')
+    const [content, setContent] = useState('')
+
+    const { id } = useParams()
+
+    // const [data, setData] = useState([])
 
     useEffect(() => {
-        fetch(``)
-        .then((response) => response.json())
-        .then((data) => setData(data))
-    }, [])
+        fetch(`/entries/${id}`)
+        .then(response => response.json())
+        .then(entry => {
+            setTitle(entry.title)
+            setMood(entry.mood)
+            setDate(entry.date)
+            setContent(entry.content)
+        }) 
+    }, [id])
 
-
-    const {id, title, date, mood, content } = data
+   
 
     return(
         <div id="myJournalImage">
