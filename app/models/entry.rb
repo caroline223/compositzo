@@ -8,7 +8,7 @@ class Entry < ApplicationRecord
     }  
     validates :mood, presence: true, allow_blank: false  
     validates :content, presence: true, allow_blank: false, length: { 
-        maximum: 1000,
+        maximum: 2000,
         too_long: "%{count} characters is the maximum allowed." 
     }
 end
