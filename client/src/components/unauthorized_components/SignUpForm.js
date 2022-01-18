@@ -6,8 +6,8 @@ function SignUpForm({setUser}) {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
-    const [full_name, setFullName] = useState("")
-    const [birth_date, setBirthDate] = useState("")
+    const [fullname, setFullName] = useState("")
+    const [birthdate, setBirthDate] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [errors, setErrors] = useState([])
 
@@ -21,8 +21,8 @@ function SignUpForm({setUser}) {
                 "Content-type" : "application/json"
             },
             body: JSON.stringify({
-                full_name,
-                birth_date,
+                fullname,
+                birthdate,
                 username, 
                 password,
                 email,
@@ -68,7 +68,7 @@ function SignUpForm({setUser}) {
                     type="text" 
                     className="form-control" 
                     placeholder="Full Name" 
-                    value={full_name}
+                    value={fullname}
                     onChange={(e) => setFullName(e.target.value)}
                     required
                 />
@@ -80,7 +80,7 @@ function SignUpForm({setUser}) {
                     type="date" 
                     className="form-control" 
                     placeholder="Birthday" 
-                    value={birth_date}
+                    value={birthdate}
                     onChange={(e) => setBirthDate(e.target.value)}
                     required
                 />
