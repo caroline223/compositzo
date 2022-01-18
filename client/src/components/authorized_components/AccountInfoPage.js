@@ -1,12 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
+
 import { useParams } from 'react-router-dom'
 
 
 function AccountInfoPage(){
 
-    const [username, setUsername] = useState('')
-    const [email, setEmail] = useState('')
+    const [fullname, setFullName] = useState("")
+    const [birthdate, setBirthDate] = useState("")
+    const [username, setUsername] = useState("")
+    const [email, setEmail] = useState("")
+    
 
     const { id } = useParams()
 
@@ -16,8 +20,12 @@ function AccountInfoPage(){
         .then((user) => {
             setUsername(user.username)
             setEmail(user.email)
+            setFullName(user.fullname)
+            setBirthDate(user.birthdate)
         })
     }, [id])
+
+   
 
     return(
         <div id="myJournalImage">
@@ -28,7 +36,13 @@ function AccountInfoPage(){
             <Card.Header style={{fontFamily: 'optima'}}>Account Information</Card.Header>
             <Card.Body>
                 <Card.Text>
-                Username: {username}
+                Full Name: {fullname}
+                </Card.Text>
+                <Card.Text>
+                Birthday: {birthdate}
+                </Card.Text>
+                <Card.Text>
+                Username: {username} 
                 </Card.Text>
                 <Card.Text>
                 Email Address: {email}

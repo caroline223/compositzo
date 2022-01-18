@@ -12,6 +12,7 @@ function JournalPage({ setUser }){
     const [errors, setErrors] = useState([])
    
 
+   
     const history = useHistory()
 
     const createEntry = (event) => {
