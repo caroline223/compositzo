@@ -6,6 +6,8 @@ function SignUpForm({setUser}) {
     const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
+    const [full_name, setFullName] = useState("")
+    const [birth_date, setBirthDate] = useState("")
     const [passwordConfirmation, setPasswordConfirmation] = useState("")
     const [errors, setErrors] = useState([])
 
@@ -19,6 +21,8 @@ function SignUpForm({setUser}) {
                 "Content-type" : "application/json"
             },
             body: JSON.stringify({
+                full_name,
+                birth_date,
                 username, 
                 password,
                 email,
@@ -59,6 +63,30 @@ function SignUpForm({setUser}) {
         
          <form onSubmit={handleSubmit} style={{padding: '50px'}} >
             
+                <div className="form-floating"  >
+                <input 
+                    type="text" 
+                    className="form-control" 
+                    placeholder="Full Name" 
+                    value={full_name}
+                    onChange={(e) => setFullName(e.target.value)}
+                    required
+                />
+                <label htmlFor="floatingInput" >Full Name</label>
+                </div>
+                <br />
+                <div className="form-floating"  >
+                <input 
+                    type="date" 
+                    className="form-control" 
+                    placeholder="Birthday" 
+                    value={birth_date}
+                    onChange={(e) => setBirthDate(e.target.value)}
+                    required
+                />
+                <label htmlFor="floatingInput" >Birthday</label>
+                </div>
+                <br/>
                 <div className="form-floating"  >
                 <input 
                     type="email" 
