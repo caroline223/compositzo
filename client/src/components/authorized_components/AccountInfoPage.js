@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
 
+
 function AccountInfoPage(){
 
     const [data, setData] = useState([])

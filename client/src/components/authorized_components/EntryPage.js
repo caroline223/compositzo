@@ -71,7 +71,7 @@ function EntryPage({ setUser }){
                                     <a className="nav-link"  style={{color: 'red'}} href="/users/user-info" >My Account </a>
                                 </li>
                                 <li className="nav-item">
-                                <button type="button" class="btn btn" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
+                                <button type="button" className="btn btn" style={{color: 'red'}} onClick={clickLogout}>Logout</button>
                                 </li>
                                 </ul>
                             </div>
@@ -82,13 +82,13 @@ function EntryPage({ setUser }){
             <div style={{padding: '150px'}}>
                 <div className="input-group">
                     <input 
-                        class="form-control border-end-0 border rounded-pill" 
+                        className="form-control border-end-0 border rounded-pill" 
                         type="text" 
                         placeholder='Search By Title'
                         onChange={searchEntries}  
                         />
-                    <span class="input-group-append">
-                        <i class="fa fa-search"></i>
+                    <span className="input-group-append">
+                        <i className="fa fa-search"></i>
                     </span>
                 </div>
                 <br />

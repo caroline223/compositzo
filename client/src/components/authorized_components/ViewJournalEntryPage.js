@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
 import parse from 'html-react-parser'
-// import ViewJournalEntryInfo from './ViewJournalEntryInfo'
 
 
 function ViewJournalEntryPage(){
@@ -15,7 +14,7 @@ function ViewJournalEntryPage(){
     }, [])
 
 
-    const { title, date, mood, content } = data
+    const {id, title, date, mood, content } = data
 
     return(
         <div id="myJournalImage">
@@ -27,15 +26,15 @@ function ViewJournalEntryPage(){
                 <Card.Body>
                     <Card.Text>
                     At this moment, I am feeling { mood }.
-                    </Card.Text>
-                    <Card.Text>
+                    </Card.Text> 
+                    <div style={{fontFamily: 'optima'}}>
                     {parse(`${content}`)}
-                    </Card.Text>
+                    </div>
                 </Card.Body>
                 <Card.Footer className="text-muted" style={{fontFamily: 'optima'}}>{date}</Card.Footer>
             </Card>
             <div style={{textAlign: 'center'}}>
-            <Button variant="danger" style={{fontFamily: 'cursive'}} >Edit</Button>&nbsp;
+            <Button variant="danger" style={{fontFamily: 'cursive'}} href={`/entries/${id}/edit-entry`}>Edit</Button>&nbsp;
             <Button variant="danger" style={{fontFamily: 'cursive'}} href="/entries-page">Back</Button>
            
             </div>

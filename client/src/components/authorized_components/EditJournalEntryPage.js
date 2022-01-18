@@ -1,50 +1,33 @@
-import React, { useState } from 'react'
-import { useHistory } from 'react-router-dom'
+import React, { useState, useEffect } from 'react'
 import { CKEditor } from '@ckeditor/ckeditor5-react';
 import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import { useHistory, useParams } from 'react-router-dom'
 
-function JournalPage({ setUser }){
+function EditJournalEntryPage({ setUser }){
 
     const [title, setTitle] = useState('')
+    const [mood, setMood] = useState('')
     const [date, setDate] = useState('')
-    const [mood, setMood] = useState('Happy')
     const [content, setContent] = useState('')
-    const [errors, setErrors] = useState([])
    
-
+    const { id } = useParams()
     const history = useHistory()
 
-    const createEntry = (event) => {
-        event.preventDefault()
-        fetch('/entries', {
-          method: 'POST',
-          headers: {
-              "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-              title,
-              date,
-              content,
-              mood
-          })
-        })
-        .then(response => {
-            if(response.ok){
-                response.json()
-                .then(user => {
-                    setUser(user)
-                    history.push('/entries-page')
-                })
-            }
-            else {
-                response.json()
-                .then(errors => {
-                    setErrors(errors.errors)
-                })
-            }
-        })
-    }
+    const [errors, setErrors] = useState([])
 
+    useEffect(() => {
+        fetch(`/entries/${id}`)
+        .then(response => response.json())
+        .then(entry => {
+            setTitle(entry.title)
+            setMood(entry.mood)
+            setDate(entry.date)
+            setContent(entry.content)
+        }) 
+    }, [id])
+
+   
+    
     const clickLogout = () => {
         fetch(`/logout`, {
         method: 'DELETE',
@@ -58,14 +41,42 @@ function JournalPage({ setUser }){
         })
     }
 
-   
-   
-  
+    const changeEntry = (event) => {
+       event.preventDefault();
+       fetch(`/entries/${id}`, {
+           method: 'PATCH', 
+           headers: {
+               "Content-type": "application/json"
+           },
+           body: JSON.stringify({
+               title,
+               date,
+               mood,
+               content
+           })
+       })
+       .then((response) => {
+           if(response.ok){
+               response.json()
+               .then(()=> {
+                   history.push('/entries-page')
+               })
+           }
+           else {
+            response.json()
+            .then(errors => {
+                setErrors(errors.errors)
+            })
+        }
+       })
+    }
+
+
     return(
-       <div>
-        <div className="journalImage" >
-       
-        <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div>
+            <div className='journalImage'>
+
+            <nav className="navbar navbar-expand-lg navbar-light bg-light">
                 <div className="container-fluid">
                     <a className="navbar-brand" href="/journal-page"><h2 style={{color: 'red'}} >Compositzo</h2></a>
                         <div style={{textAlign: 'right'}}>
@@ -85,13 +96,12 @@ function JournalPage({ setUser }){
                          </div>
                  </div>
             </nav>
-            <form style={{padding: '100px'}} onSubmit={createEntry}>
+            <form style={{padding: '100px'}} onSubmit={changeEntry}>
             <div className="form-group">
                 <h3>Title</h3>
                 <input 
                     type="text" 
                     className="form-control" 
-                    id="exampleFormControlInput1" 
                     value={title}
                     onChange={(e) => setTitle(e.target.value)}
                     required
@@ -114,7 +124,7 @@ function JournalPage({ setUser }){
             <h3>How Are You Feeling?</h3>
                 <select className="form-select form-select-sm" 
                         aria-label=".form-select-sm example" 
-                        value={mood}
+                        defaultValue={mood}
                         onChange={(e) => setMood(e.target.value)}
                         required
                         >
@@ -154,7 +164,7 @@ function JournalPage({ setUser }){
             <div style={{textAlign: 'center'}}>
                 <button type="submit" className="btn btn-danger">
                      <div style={{ fontFamily: 'Optima'}}>
-                         Save
+                         Update
                     </div>
                 </button>
                 <p style={{textAlign: 'center', fontFamily: 'Optima'}}><a className="btn btn btn-danger" href="/entries-page" >Back</a></p>
@@ -162,12 +172,17 @@ function JournalPage({ setUser }){
             
         </form>
 
-        <input className="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input> 
-     </div>
-
+            </div>
+             
+            <input className="form-control" type="text" value={errors}  style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input> 
+     
         </div>
+     
+
+        
     )
+
+
+
 }
-export default JournalPage;
-
-
+export default EditJournalEntryPage
