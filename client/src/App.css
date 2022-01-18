@@ -187,12 +187,13 @@ ol li{
 #entriesImage{
   background-size: 100%;
   opacity: 0.8;
+  height: 100vh;
   background-repeat: repeat-x repeat-y;
   overflow: scroll;
   background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-life-of-pix-8892.jpg');
 }
 
-#journalImage{
+.journalImage{
   background-size: 100%;
   opacity: 0.8;
   background-repeat: repeat-x repeat-y;
@@ -223,5 +224,12 @@ ol li{
   background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
   background-size: 50%;
   background-repeat: repeat-x repeat-y;
+}
+
+#myJournalImage{
+  background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-fwstudio-139306.jpg');
+  background-size: cover;
+  height: 100vh;
+  
 }
  
