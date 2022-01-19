@@ -11,6 +11,7 @@ import TravelPage from './unauthorized_components/TravelPage'
 import AboutPage from './unauthorized_components/AboutPage'
 import ContactPage from './unauthorized_components/ContactPage'
 import LogoutPage from './unauthorized_components/LogoutPage'
+import AccountDeletionSuccess from './unauthorized_components/AccountDeletionSuccess'
 
 import { Switch, Route } from 'react-router-dom'
 
@@ -55,6 +56,9 @@ function UnauthorizedUser({ setUser }) {
             </Route>
             <Route exact path="/logout">
                 <LogoutPage setUser={setUser} /> 
+            </Route>
+            <Route exact path="/deleted">
+                <AccountDeletionSuccess setUser={setUser} /> 
             </Route>
             
         </Switch>
