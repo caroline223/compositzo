@@ -4,6 +4,7 @@ import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
 import { useHistory, useParams } from 'react-router-dom'
 
 
+
 function EditJournalEntryPage({ setUser }){
 
     const [title, setTitle] = useState('')
@@ -125,7 +126,7 @@ function EditJournalEntryPage({ setUser }){
             <h3>How Are You Feeling?</h3>
                 <select className="form-select form-select-sm" 
                         aria-label=".form-select-sm example" 
-                        defaultValue={mood}
+                        value={mood}
                         onChange={(e) => setMood(e.target.value)}
                         required
                         >

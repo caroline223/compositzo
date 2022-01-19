@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { Card, Button } from 'react-bootstrap'
 
-import { useParams } from 'react-router-dom'
+import { useParams, useHistory } from 'react-router-dom'
 
 
-function AccountInfoPage(){
+function AccountInfoPage({setUser}){
 
     const [fullname, setFullName] = useState("")
     const [birthdate, setBirthDate] = useState("")
@@ -13,6 +13,7 @@ function AccountInfoPage(){
     
 
     const { id } = useParams()
+    const history = useHistory()
 
     useEffect(() => {
         fetch(`/users/${id}`)
@@ -24,6 +25,20 @@ function AccountInfoPage(){
             setBirthDate(user.birthdate)
         })
     }, [id])
+
+    const deleteUser = (event) => {
+        const id = parseInt(event.target.id)
+        if(window.confirm("Are you sure?"))
+        fetch(`/users/${id}`, {
+            method: 'DELETE'
+        })
+        .then((response) => {
+            if (response.ok) {
+            setUser(null) 
+            history.push('/deleted')
+            }
+        })
+    }
 
    
 
@@ -50,7 +65,8 @@ function AccountInfoPage(){
             </Card.Body>
         </Card>
         <div style={{textAlign: 'center'}}>
-        <Button variant="danger" style={{fontFamily: 'cursive'}} href="/entries-page">Back</Button>
+        <Button variant="danger" style={{fontFamily: 'cursive'}} href="/entries-page">Back</Button>&nbsp;&nbsp;
+        <Button variant="danger" style={{fontFamily: 'cursive'}} onClick={deleteUser}>Delete Account</Button>
        
         </div>
        
