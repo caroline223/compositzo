@@ -223,7 +223,7 @@ ol li{
 #signUpPageImage{
   background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
   background-size: 50%;
-  background-repeat: repeat-x repeat-y;
+  height: 100vh;
 }
 
 #myJournalImage{
