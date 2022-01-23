@@ -224,6 +224,7 @@ ol li{
   background-image: url('/Users/carolineforrester/Flatiron/code/phase_5_2/project-template-react-rails-api/client/src/images/pexels-skylar-kang-6045025.jpg');
   background-size: 50%;
   height: 100vh;
+  overflow: scroll;
 }
 
 #myJournalImage{
