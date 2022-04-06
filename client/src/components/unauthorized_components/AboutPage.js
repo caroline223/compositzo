@@ -33,7 +33,7 @@ function AboutPage() {
             <h1>Who Are We?</h1>
 
            <p>
-               We beleive that life's most important momemnts are worth documenting. From getting your driver's license to purchasing your first home, 
+               We beleive that life's most important moments are worth documenting. From getting your driver's license to purchasing your first home, 
                we beleive that documenting these events are not only important, but something worth cherishing for many years to come. 
                <span style={{color: "red", fontFamily: 'cursive'}}> Compositzo</span> is an app that allows one to document all of their life's major milestones with the intention of looking back to it in future reference, as well as
                share these life stories with their significant others (i.e. spouses, children, etc.). We all know that the human mind is falliable, and as we get older, we may not remember every single important 

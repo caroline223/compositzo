@@ -14,7 +14,7 @@ function SignUpForm({setUser}) {
     const history = useHistory()
 
     const handleSubmit = (event) => {
-        event.preventDefault()
+        event.preventDefault() // tells the user agent that if the event does not explicitly happen, then the default action should not occur
         fetch('/signup', {
             method: 'POST',
             headers: {

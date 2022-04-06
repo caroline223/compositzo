@@ -62,6 +62,7 @@ function LoginForm({ setUser }) {
             />
           <label htmlFor="floatingInput">Username</label>
         </div>
+        
       <br />
         <div className="form-floating">
          <input 
