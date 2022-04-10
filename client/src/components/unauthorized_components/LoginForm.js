@@ -1,16 +1,19 @@
 import React, { useState } from 'react'
 import { useHistory } from 'react-router-dom'
 
+
 function LoginForm({ setUser }) {
 
     const history = useHistory()
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
     const [errors, setErrors] = useState([]);
+    
 
     
 
     const handleSubmit = (event)  => {
+       
       event.preventDefault()
       fetch('/login', {
         method: 'POST',
@@ -34,6 +37,7 @@ function LoginForm({ setUser }) {
             })
           }
         })
+
       }
   
 
@@ -49,7 +53,8 @@ function LoginForm({ setUser }) {
                   </header>
                 </div>
 
-        <form style={{padding: '200px'}} onSubmit={handleSubmit}>
+
+       <form style={{padding: '200px'}} onSubmit={handleSubmit}>
         <div className="form-floating">
           <input 
             type="text" 
@@ -81,6 +86,12 @@ function LoginForm({ setUser }) {
      
     <p style={{textAlign: 'center'}}><a className="w-100 btn btn-lg btn-secondary" href="/" >Home</a></p>
     </form>
+       
+
+
+
+
+        
     <input className="form-control" type="text" value={errors} style={{color: 'red', textAlign: 'center', fontFamily: 'cursive'}} readOnly></input>
   </div>
   
