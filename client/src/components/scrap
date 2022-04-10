@@ -153,3 +153,39 @@
 //         </Grid.Column>
 //     </Grid> 
 // </div>
+
+
+
+// eslint-disable-next-line no-lone-blocks
+{/* <form style={{padding: '200px'}} onSubmit={handleSubmit}>
+        <div className="form-floating">
+          <input 
+            type="text" 
+            className="form-control" 
+            id="floatingInput" 
+            placeholder="Username" 
+            value={username}
+            onChange={(e) => setUsername(e.target.value)}
+            required
+            />
+          <label htmlFor="floatingInput">Username</label>
+        </div>
+        
+      <br />
+        <div className="form-floating">
+         <input 
+                type="password" 
+                className="form-control" 
+                id="floatingPassword" 
+                placeholder="Password" 
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                required
+                />
+          <label htmlFor="floatingPassword">Password</label>
+         </div>
+      <br />
+    <button className="w-100 btn btn-lg btn-secondary" type="submit">Sign In</button>
+     
+    <p style={{textAlign: 'center'}}><a className="w-100 btn btn-lg btn-secondary" href="/" >Home</a></p>
+    </form> */}
